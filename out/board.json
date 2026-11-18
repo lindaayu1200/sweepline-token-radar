@@ -37,8 +37,8 @@
       "growth_mult": 0.986839,
       "age_mult": 0.848767,
       "base_implied_usd": 84579822,
-      "rank": 1,
       "ev_per_hour": 94454.8747,
+      "rank": 1,
       "verdict": "farm"
     },
     {
@@ -81,8 +81,8 @@
       "growth_mult": 1.03387,
       "age_mult": 0.848767,
       "base_implied_usd": 63513504,
-      "rank": 2,
       "ev_per_hour": 74308.584,
+      "rank": 2,
       "verdict": "farm"
     },
     {
@@ -124,8 +124,8 @@
       "growth_mult": 0.950261,
       "age_mult": 0.873151,
       "base_implied_usd": 63217471,
-      "rank": 3,
       "ev_per_hour": 69933.696,
+      "rank": 3,
       "verdict": "farm"
     },
     {
@@ -157,8 +157,8 @@
       "growth_mult": 0.983163,
       "age_mult": 0.867397,
       "base_implied_usd": 51662097,
-      "rank": 4,
       "ev_per_hour": 58739.272,
+      "rank": 4,
       "verdict": "farm"
     },
     {
@@ -202,8 +202,8 @@
       "growth_mult": 1.04987,
       "age_mult": 0.894521,
       "base_implied_usd": 35144342,
-      "rank": 5,
       "ev_per_hour": 44003.3547,
+      "rank": 5,
       "verdict": "farm"
     },
     {
@@ -214,7 +214,7 @@
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $250; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $250 to register meaningful usage; cost $3 in fees, duration 1h.",
         "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Hold window: keep the qualifying position or balance active for 56.3 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -229,13 +229,13 @@
       "age_days": 45,
       "expected_airdrop_usd": 119630.65,
       "gas_usd": 16,
-      "capital_drag_usd": 2.05,
+      "capital_drag_usd": 1.93,
       "farm_hours": 4.75,
       "growth_mult": 0.941574,
       "age_mult": 0.712329,
       "base_implied_usd": 35672833,
+      "ev_per_hour": 25181.6253,
       "rank": 6,
-      "ev_per_hour": 25181.6,
       "verdict": "farm"
     },
     {
@@ -265,8 +265,8 @@
       "growth_mult": 1.000649,
       "age_mult": 0.833699,
       "base_implied_usd": 27460643,
-      "rank": 7,
       "ev_per_hour": 28632.6975,
+      "rank": 7,
       "verdict": "farm"
     },
     {
@@ -296,8 +296,8 @@
       "growth_mult": 0.927809,
       "age_mult": 0.94274,
       "base_implied_usd": 24828984,
-      "rank": 8,
       "ev_per_hour": 28953.1653,
+      "rank": 8,
       "verdict": "farm"
     },
     {
@@ -329,8 +329,8 @@
       "growth_mult": 0.990148,
       "age_mult": 0.893973,
       "base_implied_usd": 24196847,
-      "rank": 9,
       "ev_per_hour": 26769.5,
+      "rank": 9,
       "verdict": "farm"
     },
     {
@@ -340,8 +340,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $250; cost $2 in fees, duration 0.5h.",
         "Qualifying dex action: Swap and provide about $250 in liquidity on a main pool to record DEX volume and LP activity; cost $4 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 55.3 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -354,14 +354,14 @@
       "change_7d": -6.5592,
       "age_days": 56,
       "expected_airdrop_usd": 104395.39,
-      "gas_usd": 17,
-      "capital_drag_usd": 2.05,
-      "farm_hours": 4.75,
+      "gas_usd": 16,
+      "capital_drag_usd": 1.89,
+      "farm_hours": 4.5,
       "growth_mult": 0.960645,
       "age_mult": 0.715342,
       "base_implied_usd": 30383265,
+      "ev_per_hour": 23195,
       "rank": 10,
-      "ev_per_hour": 21973.9663,
       "verdict": "farm"
     },
     {
@@ -371,8 +371,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $250; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $250 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 40.7 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -394,14 +394,14 @@
       "change_7d": -2.5459,
       "age_days": 233,
       "expected_airdrop_usd": 100422.56,
-      "gas_usd": 14,
-      "capital_drag_usd": 1.54,
-      "farm_hours": 4.25,
+      "gas_usd": 13,
+      "capital_drag_usd": 1.39,
+      "farm_hours": 4,
       "growth_mult": 0.984725,
       "age_mult": 0.763836,
       "base_implied_usd": 26702171,
+      "ev_per_hour": 25102.0425,
       "rank": 11,
-      "ev_per_hour": 23625.1812,
       "verdict": "farm"
     },
     {
@@ -435,8 +435,8 @@
       "growth_mult": 0.981514,
       "age_mult": 0.905205,
       "base_implied_usd": 22603583,
-      "rank": 12,
       "ev_per_hour": 25100.0525,
+      "rank": 12,
       "verdict": "farm"
     },
     {
@@ -466,8 +466,8 @@
       "growth_mult": 0.938914,
       "age_mult": 0.953425,
       "base_implied_usd": 21891866,
-      "rank": 13,
       "ev_per_hour": 26126.184,
+      "rank": 13,
       "verdict": "farm"
     },
     {
@@ -506,8 +506,8 @@
       "growth_mult": 0.97375,
       "age_mult": 0.848767,
       "base_implied_usd": 23152237,
-      "rank": 14,
       "ev_per_hour": 25509.8907,
+      "rank": 14,
       "verdict": "farm"
     },
     {
@@ -545,8 +545,8 @@
       "growth_mult": 0.946586,
       "age_mult": 0.848767,
       "base_implied_usd": 22392399,
-      "rank": 15,
       "ev_per_hour": 23984.1813,
+      "rank": 15,
       "verdict": "farm"
     },
     {
@@ -576,8 +576,8 @@
       "growth_mult": 0.939133,
       "age_mult": 0.8,
       "base_implied_usd": 22948568,
-      "rank": 16,
       "ev_per_hour": 22985.0667,
+      "rank": 16,
       "verdict": "farm"
     },
     {
@@ -629,8 +629,8 @@
       "growth_mult": 0.980227,
       "age_mult": 0.889315,
       "base_implied_usd": 19023264,
-      "rank": 17,
       "ev_per_hour": 22107.408,
+      "rank": 17,
       "verdict": "farm"
     },
     {
@@ -641,7 +641,7 @@
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $250; cost $2 in fees, duration 0.5h.",
         "Qualifying rwa action: Complete onboarding steps if available and allocate about $250 to a supported RWA or yield product; cost $3 in fees, duration 1.25h.",
         "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Hold window: keep the qualifying position or balance active for 43.5 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -656,13 +656,13 @@
       "age_days": 199,
       "expected_airdrop_usd": 82615.22,
       "gas_usd": 14,
-      "capital_drag_usd": 1.54,
+      "capital_drag_usd": 1.49,
       "farm_hours": 4.5,
       "growth_mult": 1.001792,
       "age_mult": 0.754521,
       "base_implied_usd": 21859556,
+      "ev_per_hour": 18355.4956,
       "rank": 18,
-      "ev_per_hour": 18355.4844,
       "verdict": "farm"
     },
     {
@@ -702,8 +702,8 @@
       "growth_mult": 0.939438,
       "age_mult": 0.848767,
       "base_implied_usd": 19691792,
-      "rank": 19,
       "ev_per_hour": 20931.9067,
+      "rank": 19,
       "verdict": "farm"
     },
     {
@@ -733,8 +733,8 @@
       "growth_mult": 1.00015,
       "age_mult": 1,
       "base_implied_usd": 15466490,
-      "rank": 20,
       "ev_per_hour": 19332.8575,
+      "rank": 20,
       "verdict": "farm"
     },
     {
@@ -766,8 +766,8 @@
       "growth_mult": 0.828804,
       "age_mult": 0.890137,
       "base_implied_usd": 20439940,
-      "rank": 21,
       "ev_per_hour": 21538.7686,
+      "rank": 21,
       "verdict": "farm"
     },
     {
@@ -777,8 +777,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $250; cost $2 in fees, duration 0.5h.",
         "Qualifying stablecoin action: Mint, hold, or provide about $250 of the protocol stablecoin/liquidity to register core product usage; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 41.8 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -793,14 +793,14 @@
       "change_7d": -0.7486,
       "age_days": 219,
       "expected_airdrop_usd": 72706.23,
-      "gas_usd": 14,
-      "capital_drag_usd": 1.54,
-      "farm_hours": 4,
+      "gas_usd": 13,
+      "capital_drag_usd": 1.43,
+      "farm_hours": 3.75,
       "growth_mult": 0.995508,
       "age_mult": 0.76,
       "base_implied_usd": 19219544,
+      "ev_per_hour": 19384.48,
       "rank": 22,
-      "ev_per_hour": 18172.6725,
       "verdict": "farm"
     },
     {
@@ -810,8 +810,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $150; cost $2 in fees, duration 0.5h.",
         "Qualifying lending action: Supply about $150 as collateral and borrow a small amount, keeping health factor safe to register lending usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 31.1 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -824,14 +824,14 @@
       "change_7d": 0.6775,
       "age_days": 352,
       "expected_airdrop_usd": 72107.8,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.92,
-      "farm_hours": 4.25,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.64,
+      "farm_hours": 3.75,
       "growth_mult": 1.004065,
       "age_mult": 0.796438,
       "base_implied_usd": 18034257,
+      "ev_per_hour": 19225.376,
       "rank": 23,
-      "ev_per_hour": 16963.0306,
       "verdict": "farm"
     },
     {
@@ -841,8 +841,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $150; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $150 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 45.3 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -857,14 +857,14 @@
       "change_7d": 11.2334,
       "age_days": 177,
       "expected_airdrop_usd": 70296.25,
-      "gas_usd": 16,
-      "capital_drag_usd": 1.23,
-      "farm_hours": 4.75,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.93,
+      "farm_hours": 4.25,
       "growth_mult": 1.0674,
       "age_mult": 0.748493,
       "base_implied_usd": 17597337,
+      "ev_per_hour": 16536.7812,
       "rank": 24,
-      "ev_per_hour": 14795.5832,
       "verdict": "farm"
     },
     {
@@ -894,8 +894,8 @@
       "growth_mult": 0.970669,
       "age_mult": 0.807945,
       "base_implied_usd": 16248184,
-      "rank": 25,
       "ev_per_hour": 16986.7627,
+      "rank": 25,
       "verdict": "farm"
     },
     {
@@ -905,8 +905,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $150; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $150 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 45.2 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -919,14 +919,14 @@
       "change_7d": 5.7711,
       "age_days": 178,
       "expected_airdrop_usd": 60619.07,
-      "gas_usd": 16,
-      "capital_drag_usd": 1.23,
-      "farm_hours": 4.75,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.93,
+      "farm_hours": 4.25,
       "growth_mult": 1.034627,
       "age_mult": 0.748767,
       "base_implied_usd": 15649802,
+      "ev_per_hour": 14259.7976,
       "rank": 26,
-      "ev_per_hour": 12758.2821,
       "verdict": "farm"
     },
     {
@@ -957,8 +957,8 @@
       "growth_mult": 0.913076,
       "age_mult": 0.874795,
       "base_implied_usd": 14839620,
-      "rank": 27,
       "ev_per_hour": 15800.912,
+      "rank": 27,
       "verdict": "farm"
     },
     {
@@ -968,8 +968,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $150; cost $2 in fees, duration 0.5h.",
         "Qualifying rwa action: Complete onboarding steps if available and allocate about $150 to a supported RWA or yield product; cost $3 in fees, duration 1.25h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 50.6 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -982,14 +982,14 @@
       "change_7d": 0.1453,
       "age_days": 113,
       "expected_airdrop_usd": 58051.43,
-      "gas_usd": 16,
-      "capital_drag_usd": 1.23,
-      "farm_hours": 5,
+      "gas_usd": 15,
+      "capital_drag_usd": 1.04,
+      "farm_hours": 4.75,
       "growth_mult": 1.000872,
       "age_mult": 0.730959,
       "base_implied_usd": 15869801,
+      "ev_per_hour": 12217.9768,
       "rank": 28,
-      "ev_per_hour": 11606.84,
       "verdict": "farm"
     },
     {
@@ -1024,39 +1024,8 @@
       "growth_mult": 0.964244,
       "age_mult": 0.81589,
       "base_implied_usd": 14567085,
-      "rank": 29,
       "ev_per_hour": 14322.0725,
-      "verdict": "farm"
-    },
-    {
-      "slug": "shift-defi",
-      "name": "Shift DeFi",
-      "implied_value_usd": 11067260,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
-        "Qualifying vaults action: Deposit about $100 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Yield",
-      "chains": [
-        "Ethereum"
-      ],
-      "tvl_usd": 47599147,
-      "change_7d": 4448.4747,
-      "age_days": 45,
-      "expected_airdrop_usd": 55336.3,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.82,
-      "farm_hours": 4.5,
-      "growth_mult": 1.48,
-      "age_mult": 0.712329,
-      "base_implied_usd": 10497791,
-      "rank": 30,
-      "ev_per_hour": 12293.2178,
+      "rank": 29,
       "verdict": "farm"
     },
     {
@@ -1086,8 +1055,8 @@
       "growth_mult": 0.968612,
       "age_mult": 0.8,
       "base_implied_usd": 13975553,
-      "rank": 31,
       "ev_per_hour": 14435.976,
+      "rank": 30,
       "verdict": "farm"
     },
     {
@@ -1119,8 +1088,8 @@
       "growth_mult": 0.980337,
       "age_mult": 0.846575,
       "base_implied_usd": 12867566,
-      "rank": 32,
       "ev_per_hour": 15252.4143,
+      "rank": 31,
       "verdict": "farm"
     },
     {
@@ -1130,8 +1099,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying vaults action: Deposit about $100 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 48.1 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1144,14 +1113,14 @@
       "change_7d": 4.6366,
       "age_days": 143,
       "expected_airdrop_usd": 51200.8,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.82,
-      "farm_hours": 4.5,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.66,
+      "farm_hours": 4,
       "growth_mult": 1.02782,
       "age_mult": 0.739178,
       "base_implied_usd": 13478474,
-      "rank": 33,
-      "ev_per_hour": 11374.2178,
+      "ev_per_hour": 12796.535,
+      "rank": 32,
       "verdict": "farm"
     },
     {
@@ -1181,8 +1150,8 @@
       "growth_mult": 0.935881,
       "age_mult": 0.880548,
       "base_implied_usd": 12346556,
-      "rank": 34,
       "ev_per_hour": 14531.9543,
+      "rank": 33,
       "verdict": "farm"
     },
     {
@@ -1212,8 +1181,8 @@
       "growth_mult": 0.999659,
       "age_mult": 1,
       "base_implied_usd": 10036342,
-      "rank": 35,
       "ev_per_hour": 13373.92,
+      "rank": 34,
       "verdict": "farm"
     },
     {
@@ -1223,8 +1192,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $150; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $150 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 53.9 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1238,14 +1207,14 @@
       "change_7d": -0.5971,
       "age_days": 73,
       "expected_airdrop_usd": 50141.23,
-      "gas_usd": 16,
-      "capital_drag_usd": 1.23,
-      "farm_hours": 4.75,
+      "gas_usd": 15,
+      "capital_drag_usd": 1.11,
+      "farm_hours": 4.5,
       "growth_mult": 0.996417,
       "age_mult": 0.72,
       "base_implied_usd": 13978198,
-      "rank": 36,
-      "ev_per_hour": 10552.4211,
+      "ev_per_hour": 11138.9156,
+      "rank": 35,
       "verdict": "farm"
     },
     {
@@ -1255,8 +1224,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $100 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 45.9 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1275,14 +1244,14 @@
       "change_7d": 9.0271,
       "age_days": 169,
       "expected_airdrop_usd": 47739.11,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.82,
-      "farm_hours": 4.75,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.63,
+      "farm_hours": 4.25,
       "growth_mult": 1.054163,
       "age_mult": 0.746301,
       "base_implied_usd": 12136193,
-      "rank": 37,
-      "ev_per_hour": 10046.7979,
+      "ev_per_hour": 11229.2894,
+      "rank": 36,
       "verdict": "farm"
     },
     {
@@ -1292,8 +1261,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying vaults action: Deposit about $100 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 52.8 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1306,14 +1275,14 @@
       "change_7d": 2.3316,
       "age_days": 86,
       "expected_airdrop_usd": 47007.22,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.82,
-      "farm_hours": 4.5,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.72,
+      "farm_hours": 4.25,
       "growth_mult": 1.01399,
       "age_mult": 0.723562,
       "base_implied_usd": 12814022,
-      "rank": 38,
-      "ev_per_hour": 10442.3111,
+      "ev_per_hour": 11056.8235,
+      "rank": 37,
       "verdict": "farm"
     },
     {
@@ -1348,8 +1317,8 @@
       "growth_mult": 0.94054,
       "age_mult": 0.906027,
       "base_implied_usd": 10598142,
-      "rank": 39,
       "ev_per_hour": 12898.2543,
+      "rank": 38,
       "verdict": "farm"
     },
     {
@@ -1379,8 +1348,8 @@
       "growth_mult": 0.992089,
       "age_mult": 0.877808,
       "base_implied_usd": 10219655,
-      "rank": 40,
       "ev_per_hour": 12710.6371,
+      "rank": 39,
       "verdict": "farm"
     },
     {
@@ -1417,8 +1386,8 @@
       "growth_mult": 0.943893,
       "age_mult": 0.848767,
       "base_implied_usd": 11029980,
-      "rank": 41,
       "ev_per_hour": 11778.8533,
+      "rank": 40,
       "verdict": "farm"
     },
     {
@@ -1449,8 +1418,8 @@
       "growth_mult": 0.897685,
       "age_mult": 0.969863,
       "base_implied_usd": 10125954,
-      "rank": 42,
       "ev_per_hour": 12590.7029,
+      "rank": 41,
       "verdict": "farm"
     },
     {
@@ -1482,8 +1451,8 @@
       "growth_mult": 0.945727,
       "age_mult": 0.8,
       "base_implied_usd": 11553069,
-      "rank": 43,
       "ev_per_hour": 12483.3686,
+      "rank": 42,
       "verdict": "farm"
     },
     {
@@ -1516,8 +1485,8 @@
       "growth_mult": 1.00683,
       "age_mult": 0.877808,
       "base_implied_usd": 9391383,
-      "rank": 44,
       "ev_per_hour": 11853.8,
+      "rank": 43,
       "verdict": "farm"
     },
     {
@@ -1528,7 +1497,7 @@
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying bridge action: Bridge about $100 through the protocol route and back if needed to register cross-chain transfer activity; cost $6 in fees, duration 1h.",
         "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Hold window: keep the qualifying position or balance active for 42.8 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1542,13 +1511,13 @@
       "age_days": 207,
       "expected_airdrop_usd": 41492.58,
       "gas_usd": 17,
-      "capital_drag_usd": 0.62,
+      "capital_drag_usd": 0.59,
       "farm_hours": 4.25,
       "growth_mult": 1.05195,
       "age_mult": 0.756712,
       "base_implied_usd": 10424959,
-      "rank": 45,
-      "ev_per_hour": 9758.8141,
+      "ev_per_hour": 9758.8212,
+      "rank": 44,
       "verdict": "farm"
     },
     {
@@ -1594,8 +1563,8 @@
       "growth_mult": 0.916538,
       "age_mult": 0.848767,
       "base_implied_usd": 10417041,
-      "rank": 46,
       "ev_per_hour": 10801.6213,
+      "rank": 45,
       "verdict": "farm"
     },
     {
@@ -1605,8 +1574,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying insurance action: Provide about $100 of cover or underwriting capacity where open to register insurance protocol usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 32 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1619,14 +1588,14 @@
       "change_7d": -14.4069,
       "age_days": 340,
       "expected_airdrop_usd": 39514.7,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.62,
-      "farm_hours": 4.25,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.44,
+      "farm_hours": 3.75,
       "growth_mult": 0.913559,
       "age_mult": 0.793151,
       "base_implied_usd": 10906779,
-      "rank": 47,
-      "ev_per_hour": 9294.1365,
+      "ev_per_hour": 10533.936,
+      "rank": 46,
       "verdict": "farm"
     },
     {
@@ -1636,8 +1605,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying lending action: Supply about $100 as collateral and borrow a small amount, keeping health factor safe to register lending usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 33.2 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1650,14 +1619,14 @@
       "change_7d": -9.8516,
       "age_days": 325,
       "expected_airdrop_usd": 39498.17,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.62,
-      "farm_hours": 4.25,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.45,
+      "farm_hours": 3.75,
       "growth_mult": 0.94089,
       "age_mult": 0.789041,
       "base_implied_usd": 10640653,
-      "rank": 48,
-      "ev_per_hour": 9290.2471,
+      "ev_per_hour": 10529.5253,
+      "rank": 47,
       "verdict": "farm"
     },
     {
@@ -1688,8 +1657,8 @@
       "growth_mult": 0.93613,
       "age_mult": 0.814521,
       "base_implied_usd": 10234853,
-      "rank": 49,
       "ev_per_hour": 10402.0853,
+      "rank": 48,
       "verdict": "farm"
     },
     {
@@ -1699,8 +1668,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying lending action: Supply about $100 as collateral and borrow a small amount, keeping health factor safe to register lending usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 41.1 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1713,14 +1682,14 @@
       "change_7d": -7.8161,
       "age_days": 228,
       "expected_airdrop_usd": 38973.28,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.62,
-      "farm_hours": 4.25,
+      "gas_usd": 13,
+      "capital_drag_usd": 0.56,
+      "farm_hours": 4,
       "growth_mult": 0.953103,
       "age_mult": 0.762466,
       "base_implied_usd": 10725970,
-      "rank": 50,
-      "ev_per_hour": 9166.7435,
+      "ev_per_hour": 9739.93,
+      "rank": 49,
       "verdict": "farm"
     },
     {
@@ -1731,7 +1700,7 @@
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $100 to register meaningful usage; cost $3 in fees, duration 1h.",
         "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Hold window: keep the qualifying position or balance active for 44.5 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1745,13 +1714,13 @@
       "age_days": 186,
       "expected_airdrop_usd": 38841.27,
       "gas_usd": 14,
-      "capital_drag_usd": 0.62,
+      "capital_drag_usd": 0.61,
       "farm_hours": 4.25,
       "growth_mult": 0.926695,
       "age_mult": 0.750959,
       "base_implied_usd": 11162729,
-      "rank": 51,
-      "ev_per_hour": 9135.6824,
+      "ev_per_hour": 9135.6847,
+      "rank": 50,
       "verdict": "farm"
     },
     {
@@ -1761,8 +1730,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying staking action: Stake about $100 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 41.6 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -1775,14 +1744,14 @@
       "change_7d": -4.3421,
       "age_days": 222,
       "expected_airdrop_usd": 38478.92,
-      "gas_usd": 13,
-      "capital_drag_usd": 0.62,
-      "farm_hours": 4,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.57,
+      "farm_hours": 3.75,
       "growth_mult": 0.973947,
       "age_mult": 0.760822,
       "base_implied_usd": 10385665,
-      "rank": 52,
-      "ev_per_hour": 9616.325,
+      "ev_per_hour": 10257.6933,
+      "rank": 51,
       "verdict": "farm"
     },
     {
@@ -1813,8 +1782,8 @@
       "growth_mult": 1.000279,
       "age_mult": 0.859726,
       "base_implied_usd": 8892110,
-      "rank": 53,
       "ev_per_hour": 10920.6143,
+      "rank": 52,
       "verdict": "farm"
     },
     {
@@ -1844,8 +1813,8 @@
       "growth_mult": 0.974616,
       "age_mult": 0.8,
       "base_implied_usd": 9730885,
-      "rank": 54,
       "ev_per_hour": 10112.0293,
+      "rank": 53,
       "verdict": "farm"
     },
     {
@@ -1875,8 +1844,8 @@
       "growth_mult": 0.964146,
       "age_mult": 0.901644,
       "base_implied_usd": 8725942,
-      "rank": 55,
       "ev_per_hour": 10833.3143,
+      "rank": 54,
       "verdict": "farm"
     },
     {
@@ -1907,40 +1876,8 @@
       "growth_mult": 0.999604,
       "age_mult": 0.802466,
       "base_implied_usd": 9439377,
-      "rank": 56,
       "ev_per_hour": 10092.3947,
-      "verdict": "farm"
-    },
-    {
-      "slug": "august-digital",
-      "name": "August Digital",
-      "implied_value_usd": 7525697,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Risk Curators",
-      "chains": [
-        "Monad",
-        "Ethereum"
-      ],
-      "tvl_usd": 22373995,
-      "change_7d": 77.9812,
-      "age_days": 73,
-      "expected_airdrop_usd": 37628.49,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 1.467887,
-      "age_mult": 0.72,
-      "base_implied_usd": 7120681,
-      "rank": 57,
-      "ev_per_hour": 7918.3326,
+      "rank": 55,
       "verdict": "farm"
     },
     {
@@ -1970,8 +1907,8 @@
       "growth_mult": 0.973037,
       "age_mult": 0.8,
       "base_implied_usd": 9607190,
-      "rank": 58,
       "ev_per_hour": 9967.256,
+      "rank": 56,
       "verdict": "farm"
     },
     {
@@ -2001,8 +1938,8 @@
       "growth_mult": 1.031967,
       "age_mult": 0.846575,
       "base_implied_usd": 8546236,
-      "rank": 59,
       "ev_per_hour": 9951.7813,
+      "rank": 57,
       "verdict": "farm"
     },
     {
@@ -2032,8 +1969,8 @@
       "growth_mult": 0.91553,
       "age_mult": 0.8,
       "base_implied_usd": 10122789,
-      "rank": 60,
       "ev_per_hour": 9881.4533,
+      "rank": 58,
       "verdict": "farm"
     },
     {
@@ -2063,8 +2000,8 @@
       "growth_mult": 0.928075,
       "age_mult": 1,
       "base_implied_usd": 7948945,
-      "rank": 61,
       "ev_per_hour": 9833.0347,
+      "rank": 59,
       "verdict": "farm"
     },
     {
@@ -2094,8 +2031,8 @@
       "growth_mult": 0.995993,
       "age_mult": 0.947945,
       "base_implied_usd": 7772059,
-      "rank": 62,
       "ev_per_hour": 10479.3143,
+      "rank": 60,
       "verdict": "farm"
     },
     {
@@ -2125,8 +2062,8 @@
       "growth_mult": 0.985338,
       "age_mult": 0.833151,
       "base_implied_usd": 8877340,
-      "rank": 63,
       "ev_per_hour": 9713.3893,
+      "rank": 61,
       "verdict": "farm"
     },
     {
@@ -2166,8 +2103,8 @@
       "growth_mult": 0.937818,
       "age_mult": 0.805753,
       "base_implied_usd": 9643900,
-      "rank": 64,
       "ev_per_hour": 9713.248,
+      "rank": 62,
       "verdict": "farm"
     },
     {
@@ -2201,8 +2138,8 @@
       "growth_mult": 0.992428,
       "age_mult": 0.938356,
       "base_implied_usd": 7818404,
-      "rank": 65,
       "ev_per_hour": 9097.5675,
+      "rank": 63,
       "verdict": "farm"
     },
     {
@@ -2232,8 +2169,8 @@
       "growth_mult": 0.913772,
       "age_mult": 1,
       "base_implied_usd": 7931770,
-      "rank": 66,
       "ev_per_hour": 10350.84,
+      "rank": 64,
       "verdict": "farm"
     },
     {
@@ -2243,8 +2180,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying vaults action: Deposit about $100 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 45.6 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -2257,14 +2194,14 @@
       "change_7d": -0.0399,
       "age_days": 173,
       "expected_airdrop_usd": 36034.7,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.82,
-      "farm_hours": 4.5,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.62,
+      "farm_hours": 4,
       "growth_mult": 0.999761,
       "age_mult": 0.747397,
       "base_implied_usd": 9645024,
-      "rank": 67,
-      "ev_per_hour": 8003.9733,
+      "ev_per_hour": 9005.02,
+      "rank": 65,
       "verdict": "farm"
     },
     {
@@ -2294,8 +2231,8 @@
       "growth_mult": 1.127642,
       "age_mult": 0.830411,
       "base_implied_usd": 7640822,
-      "rank": 68,
       "ev_per_hour": 10217.8143,
+      "rank": 66,
       "verdict": "farm"
     },
     {
@@ -2363,8 +2300,8 @@
       "growth_mult": 0.93338,
       "age_mult": 0.950411,
       "base_implied_usd": 8001667,
-      "rank": 69,
       "ev_per_hour": 10136.8457,
+      "rank": 67,
       "verdict": "farm"
     },
     {
@@ -2374,8 +2311,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $100; cost $2 in fees, duration 0.5h.",
         "Qualifying staking action: Stake about $100 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 35.8 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -2388,14 +2325,14 @@
       "change_7d": -13.9356,
       "age_days": 294,
       "expected_airdrop_usd": 35232.54,
-      "gas_usd": 13,
-      "capital_drag_usd": 0.62,
-      "farm_hours": 4,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.49,
+      "farm_hours": 3.75,
       "growth_mult": 0.916386,
       "age_mult": 0.780548,
       "base_implied_usd": 9851350,
-      "rank": 70,
-      "ev_per_hour": 8804.73,
+      "ev_per_hour": 9392.0133,
+      "rank": 68,
       "verdict": "farm"
     },
     {
@@ -2425,8 +2362,8 @@
       "growth_mult": 0.918017,
       "age_mult": 0.900274,
       "base_implied_usd": 8417735,
-      "rank": 71,
       "ev_per_hour": 9935.2829,
+      "rank": 69,
       "verdict": "farm"
     },
     {
@@ -2458,8 +2395,8 @@
       "growth_mult": 0.972366,
       "age_mult": 0.86,
       "base_implied_usd": 8313251,
-      "rank": 72,
       "ev_per_hour": 9265.8027,
+      "rank": 70,
       "verdict": "farm"
     },
     {
@@ -2489,8 +2426,8 @@
       "growth_mult": 1.001421,
       "age_mult": 0.813425,
       "base_implied_usd": 8523923,
-      "rank": 73,
       "ev_per_hour": 9254.584,
+      "rank": 71,
       "verdict": "farm"
     },
     {
@@ -2520,8 +2457,8 @@
       "growth_mult": 0.969534,
       "age_mult": 0.988767,
       "base_implied_usd": 7210571,
-      "rank": 74,
       "ev_per_hour": 9871.6029,
+      "rank": 72,
       "verdict": "farm"
     },
     {
@@ -2551,8 +2488,8 @@
       "growth_mult": 0.957832,
       "age_mult": 0.938904,
       "base_implied_usd": 7620283,
-      "rank": 75,
       "ev_per_hour": 9134.096,
+      "rank": 73,
       "verdict": "farm"
     },
     {
@@ -2582,8 +2519,8 @@
       "growth_mult": 1.001212,
       "age_mult": 0.8,
       "base_implied_usd": 8548963,
-      "rank": 76,
       "ev_per_hour": 9126.6373,
+      "rank": 74,
       "verdict": "farm"
     },
     {
@@ -2613,8 +2550,8 @@
       "growth_mult": 0.925224,
       "age_mult": 0.930685,
       "base_implied_usd": 7948257,
-      "rank": 77,
       "ev_per_hour": 9122.056,
+      "rank": 75,
       "verdict": "farm"
     },
     {
@@ -2644,8 +2581,8 @@
       "growth_mult": 0.952786,
       "age_mult": 0.909589,
       "base_implied_usd": 7804810,
-      "rank": 78,
       "ev_per_hour": 9014.5973,
+      "rank": 76,
       "verdict": "farm"
     },
     {
@@ -2675,8 +2612,8 @@
       "growth_mult": 0.971282,
       "age_mult": 0.924384,
       "base_implied_usd": 7454183,
-      "rank": 79,
       "ev_per_hour": 9557.4314,
+      "rank": 77,
       "verdict": "farm"
     },
     {
@@ -2707,8 +2644,8 @@
       "growth_mult": 0.937044,
       "age_mult": 0.898082,
       "base_implied_usd": 7869174,
-      "rank": 80,
       "ev_per_hour": 8826.4027,
+      "rank": 78,
       "verdict": "farm"
     },
     {
@@ -2739,8 +2676,8 @@
       "growth_mult": 0.924545,
       "age_mult": 0.972877,
       "base_implied_usd": 7321032,
-      "rank": 81,
       "ev_per_hour": 9403.9943,
+      "rank": 79,
       "verdict": "farm"
     },
     {
@@ -2776,8 +2713,8 @@
       "growth_mult": 0.976366,
       "age_mult": 0.936164,
       "base_implied_usd": 7156088,
-      "rank": 82,
       "ev_per_hour": 8718.0027,
+      "rank": 80,
       "verdict": "farm"
     },
     {
@@ -2787,8 +2724,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 49.2 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -2802,15 +2739,15 @@
       "change_7d": 160.8009,
       "age_days": 130,
       "expected_airdrop_usd": 32481.05,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.5,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.34,
+      "farm_hours": 4.25,
       "growth_mult": 1.48,
       "age_mult": 0.735616,
       "base_implied_usd": 5966874,
-      "rank": 83,
-      "ev_per_hour": 7214.3644,
-      "verdict": "thin"
+      "ev_per_hour": 7638.9906,
+      "rank": 81,
+      "verdict": "farm"
     },
     {
       "slug": "origami-finance",
@@ -2841,8 +2778,8 @@
       "growth_mult": 0.83444,
       "age_mult": 0.950685,
       "base_implied_usd": 8112714,
-      "rank": 84,
       "ev_per_hour": 9190.4086,
+      "rank": 82,
       "verdict": "farm"
     },
     {
@@ -2872,8 +2809,8 @@
       "growth_mult": 0.961731,
       "age_mult": 0.910411,
       "base_implied_usd": 7327351,
-      "rank": 85,
       "ev_per_hour": 8550.0933,
+      "rank": 83,
       "verdict": "farm"
     },
     {
@@ -2883,8 +2820,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying perps action: Deposit about $50 as margin and place a small hedged perpetual position to register trading activity; cost $5 in fees, duration 1.25h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 38.4 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -2897,14 +2834,14 @@
       "change_7d": 0.2216,
       "age_days": 261,
       "expected_airdrop_usd": 31569.93,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.5,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.26,
+      "farm_hours": 4.25,
       "growth_mult": 1.00133,
       "age_mult": 0.771507,
       "base_implied_usd": 8173100,
-      "rank": 86,
-      "ev_per_hour": 7011.9156,
+      "ev_per_hour": 7424.6282,
+      "rank": 84,
       "verdict": "thin"
     },
     {
@@ -2944,8 +2881,8 @@
       "growth_mult": 0.969082,
       "age_mult": 0.825753,
       "base_implied_usd": 7874504,
-      "rank": 87,
       "ev_per_hour": 8398.5547,
+      "rank": 85,
       "verdict": "farm"
     },
     {
@@ -2976,8 +2913,8 @@
       "growth_mult": 0.943466,
       "age_mult": 0.990137,
       "base_implied_usd": 6742624,
-      "rank": 88,
       "ev_per_hour": 8395.0053,
+      "rank": 86,
       "verdict": "farm"
     },
     {
@@ -3012,8 +2949,8 @@
       "growth_mult": 1.48,
       "age_mult": 0.817808,
       "base_implied_usd": 5126791,
-      "rank": 89,
       "ev_per_hour": 7753.5025,
+      "rank": 87,
       "verdict": "farm"
     },
     {
@@ -3043,8 +2980,8 @@
       "growth_mult": 0.908145,
       "age_mult": 0.829589,
       "base_implied_usd": 8161608,
-      "rank": 90,
       "ev_per_hour": 8780.5886,
+      "rank": 88,
       "verdict": "farm"
     },
     {
@@ -3077,8 +3014,8 @@
       "growth_mult": 0.974385,
       "age_mult": 0.889315,
       "base_implied_usd": 6956340,
-      "rank": 91,
       "ev_per_hour": 8033.9627,
+      "rank": 89,
       "verdict": "farm"
     },
     {
@@ -3113,8 +3050,8 @@
       "growth_mult": 0.920837,
       "age_mult": 0.87589,
       "base_implied_usd": 7469922,
-      "rank": 92,
       "ev_per_hour": 8603.4829,
+      "rank": 90,
       "verdict": "farm"
     },
     {
@@ -3149,8 +3086,8 @@
       "growth_mult": 0.826145,
       "age_mult": 0.970411,
       "base_implied_usd": 7478982,
-      "rank": 93,
       "ev_per_hour": 7990.48,
+      "rank": 91,
       "verdict": "farm"
     },
     {
@@ -3186,8 +3123,8 @@
       "growth_mult": 0.957489,
       "age_mult": 0.947945,
       "base_implied_usd": 6562011,
-      "rank": 94,
       "ev_per_hour": 7938.0667,
+      "rank": 92,
       "verdict": "farm"
     },
     {
@@ -3217,8 +3154,8 @@
       "growth_mult": 0.939426,
       "age_mult": 0.8,
       "base_implied_usd": 7870856,
-      "rank": 95,
       "ev_per_hour": 7882.9733,
+      "rank": 93,
       "verdict": "farm"
     },
     {
@@ -3250,42 +3187,9 @@
       "growth_mult": 0.914541,
       "age_mult": 1,
       "base_implied_usd": 6384272,
-      "rank": 96,
       "ev_per_hour": 7780.848,
+      "rank": 94,
       "verdict": "farm"
-    },
-    {
-      "slug": "drakewell",
-      "name": "Drakewell",
-      "implied_value_usd": 5823600,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Basis Trading",
-      "chains": [
-        "Arbitrum",
-        "Ethereum",
-        "Aleo"
-      ],
-      "tvl_usd": 28230939,
-      "change_7d": 3.2554,
-      "age_days": 43,
-      "expected_airdrop_usd": 29118,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.5,
-      "growth_mult": 1.019532,
-      "age_mult": 0.711781,
-      "base_implied_usd": 8024985,
-      "rank": 97,
-      "ev_per_hour": 6467.02,
-      "verdict": "thin"
     },
     {
       "slug": "manifest-trade",
@@ -3314,8 +3218,8 @@
       "growth_mult": 1.441913,
       "age_mult": 0.900274,
       "base_implied_usd": 4479613,
-      "rank": 98,
       "ev_per_hour": 7749.8933,
+      "rank": 95,
       "verdict": "farm"
     },
     {
@@ -3325,8 +3229,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 49.8 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -3341,14 +3245,14 @@
       "change_7d": -2.411,
       "age_days": 122,
       "expected_airdrop_usd": 29060.09,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.34,
+      "farm_hours": 4.5,
       "growth_mult": 0.985534,
       "age_mult": 0.733425,
       "base_implied_usd": 8040809,
-      "rank": 99,
-      "ev_per_hour": 6114.4589,
+      "ev_per_hour": 6454.3889,
+      "rank": 96,
       "verdict": "thin"
     },
     {
@@ -3378,8 +3282,8 @@
       "growth_mult": 0.978579,
       "age_mult": 0.834521,
       "base_implied_usd": 7062512,
-      "rank": 100,
       "ev_per_hour": 7686.8267,
+      "rank": 97,
       "verdict": "farm"
     },
     {
@@ -3413,40 +3317,9 @@
       "growth_mult": 0.925094,
       "age_mult": 0.94274,
       "base_implied_usd": 6565995,
-      "rank": 101,
       "ev_per_hour": 8177.3057,
+      "rank": 98,
       "verdict": "farm"
-    },
-    {
-      "slug": "gamma-research",
-      "name": "Gamma Research",
-      "implied_value_usd": 5690762,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Risk Curators",
-      "chains": [
-        "Monad"
-      ],
-      "tvl_usd": 21709938,
-      "change_7d": 21.2903,
-      "age_days": 72,
-      "expected_airdrop_usd": 28453.81,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 1.127742,
-      "age_mult": 0.719726,
-      "base_implied_usd": 7011219,
-      "rank": 102,
-      "ev_per_hour": 5986.8211,
-      "verdict": "thin"
     },
     {
       "slug": "agni-finance",
@@ -3475,8 +3348,8 @@
       "growth_mult": 0.975403,
       "age_mult": 1,
       "base_implied_usd": 5822526,
-      "rank": 103,
       "ev_per_hour": 7568.8907,
+      "rank": 99,
       "verdict": "farm"
     },
     {
@@ -3506,8 +3379,8 @@
       "growth_mult": 0.941683,
       "age_mult": 0.98411,
       "base_implied_usd": 6121913,
-      "rank": 104,
       "ev_per_hour": 8101.2171,
+      "rank": 100,
       "verdict": "farm"
     },
     {
@@ -3517,8 +3390,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying lending action: Supply about $50 as collateral and borrow a small amount, keeping health factor safe to register lending usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 36 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -3531,14 +3404,14 @@
       "change_7d": 11.6361,
       "age_days": 291,
       "expected_airdrop_usd": 28033.96,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.25,
+      "gas_usd": 13,
+      "capital_drag_usd": 0.25,
+      "farm_hours": 4,
       "growth_mult": 1.069817,
       "age_mult": 0.779726,
       "base_implied_usd": 6721451,
-      "rank": 105,
-      "ev_per_hour": 6592.8588,
+      "ev_per_hour": 7005.1775,
+      "rank": 101,
       "verdict": "thin"
     },
     {
@@ -3568,39 +3441,8 @@
       "growth_mult": 0.922453,
       "age_mult": 0.805753,
       "base_implied_usd": 7364847,
-      "rank": 106,
       "ev_per_hour": 7295.5013,
-      "verdict": "thin"
-    },
-    {
-      "slug": "pacifica-bridge",
-      "name": "Pacifica Bridge",
-      "implied_value_usd": 5455103,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying bridge action: Bridge about $50 through the protocol route and back if needed to register cross-chain transfer activity; cost $6 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Bridge",
-      "chains": [
-        "Solana"
-      ],
-      "tvl_usd": 24557221,
-      "change_7d": 5.0591,
-      "age_days": 32,
-      "expected_airdrop_usd": 27275.52,
-      "gas_usd": 19,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 1.030355,
-      "age_mult": 0.708767,
-      "base_implied_usd": 7469864,
-      "rank": 107,
-      "ev_per_hour": 5738.1284,
+      "rank": 102,
       "verdict": "thin"
     },
     {
@@ -3610,8 +3452,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying bridge action: Bridge about $50 through the protocol route and back if needed to register cross-chain transfer activity; cost $6 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 47.4 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -3624,14 +3466,14 @@
       "change_7d": -5.4179,
       "age_days": 151,
       "expected_airdrop_usd": 27202.39,
-      "gas_usd": 19,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
+      "gas_usd": 17,
+      "capital_drag_usd": 0.32,
+      "farm_hours": 4.25,
       "growth_mult": 0.967493,
       "age_mult": 0.74137,
       "base_implied_usd": 7584979,
-      "rank": 108,
-      "ev_per_hour": 5722.7326,
+      "ev_per_hour": 6396.4871,
+      "rank": 103,
       "verdict": "thin"
     },
     {
@@ -3641,8 +3483,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying perps action: Deposit about $50 as margin and place a small hedged perpetual position to register trading activity; cost $5 in fees, duration 1.25h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 35.7 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -3655,14 +3497,14 @@
       "change_7d": -4.5855,
       "age_days": 295,
       "expected_airdrop_usd": 27187.53,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.5,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.24,
+      "farm_hours": 4.25,
       "growth_mult": 0.972487,
       "age_mult": 0.780822,
       "base_implied_usd": 7160839,
-      "rank": 109,
-      "ev_per_hour": 6038.0489,
+      "ev_per_hour": 6393.48,
+      "rank": 104,
       "verdict": "thin"
     },
     {
@@ -3694,8 +3536,8 @@
       "growth_mult": 0.76,
       "age_mult": 0.893151,
       "base_implied_usd": 7980568,
-      "rank": 110,
       "ev_per_hour": 6768.405,
+      "rank": 105,
       "verdict": "thin"
     },
     {
@@ -3705,8 +3547,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying perps action: Deposit about $50 as margin and place a small hedged perpetual position to register trading activity; cost $5 in fees, duration 1.25h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 40.9 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -3719,45 +3561,14 @@
       "change_7d": -2.6199,
       "age_days": 231,
       "expected_airdrop_usd": 26839.64,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.5,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.28,
+      "farm_hours": 4.25,
       "growth_mult": 0.984281,
       "age_mult": 0.763288,
       "base_implied_usd": 7144954,
-      "rank": 111,
-      "ev_per_hour": 5960.74,
-      "verdict": "thin"
-    },
-    {
-      "slug": "japan-staked-sol",
-      "name": "Japan Staked SOL",
-      "implied_value_usd": 5351973,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Liquid Staking",
-      "chains": [
-        "Solana"
-      ],
-      "tvl_usd": 19655590,
-      "change_7d": 20.3675,
-      "age_days": 58,
-      "expected_airdrop_usd": 26759.87,
-      "gas_usd": 15,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.5,
-      "growth_mult": 1.122205,
-      "age_mult": 0.71589,
-      "base_implied_usd": 6661855,
-      "rank": 112,
-      "ev_per_hour": 5943.2133,
+      "ev_per_hour": 6311.6141,
+      "rank": 106,
       "verdict": "thin"
     },
     {
@@ -3787,39 +3598,8 @@
       "growth_mult": 1.157805,
       "age_mult": 0.819726,
       "base_implied_usd": 5601672,
-      "rank": 113,
       "ev_per_hour": 7085.3493,
-      "verdict": "thin"
-    },
-    {
-      "slug": "waterline",
-      "name": "Waterline",
-      "implied_value_usd": 5306769,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Risk Curators",
-      "chains": [
-        "Ethereum"
-      ],
-      "tvl_usd": 22598710,
-      "change_7d": 5.0287,
-      "age_days": 72,
-      "expected_airdrop_usd": 26533.85,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 1.030172,
-      "age_mult": 0.719726,
-      "base_implied_usd": 7157365,
-      "rank": 114,
-      "ev_per_hour": 5582.6189,
+      "rank": 107,
       "verdict": "thin"
     },
     {
@@ -3893,8 +3673,8 @@
       "growth_mult": 0.95365,
       "age_mult": 1,
       "base_implied_usd": 5541822,
-      "rank": 115,
       "ev_per_hour": 7546.4514,
+      "rank": 108,
       "verdict": "farm"
     },
     {
@@ -3924,8 +3704,8 @@
       "growth_mult": 0.937678,
       "age_mult": 0.860274,
       "base_implied_usd": 6528068,
-      "rank": 116,
       "ev_per_hour": 7017.9867,
+      "rank": 109,
       "verdict": "thin"
     },
     {
@@ -3955,9 +3735,9 @@
       "growth_mult": 0.970185,
       "age_mult": 0.854795,
       "base_implied_usd": 6296811,
-      "rank": 117,
       "ev_per_hour": 7456.5114,
-      "verdict": "thin"
+      "rank": 110,
+      "verdict": "farm"
     },
     {
       "slug": "hakutora",
@@ -3986,8 +3766,8 @@
       "growth_mult": 1.016028,
       "age_mult": 0.848767,
       "base_implied_usd": 6030298,
-      "rank": 118,
       "ev_per_hour": 6930.5547,
+      "rank": 111,
       "verdict": "thin"
     },
     {
@@ -4017,8 +3797,8 @@
       "growth_mult": 0.899735,
       "age_mult": 0.816438,
       "base_implied_usd": 7076810,
-      "rank": 119,
       "ev_per_hour": 7423.1857,
+      "rank": 112,
       "verdict": "thin"
     },
     {
@@ -4048,8 +3828,8 @@
       "growth_mult": 0.981247,
       "age_mult": 0.839726,
       "base_implied_usd": 6300163,
-      "rank": 120,
       "ev_per_hour": 7412.5114,
+      "rank": 113,
       "verdict": "thin"
     },
     {
@@ -4060,7 +3840,7 @@
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying perps action: Deposit about $50 as margin and place a small hedged perpetual position to register trading activity; cost $5 in fees, duration 1.25h.",
         "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Hold window: keep the qualifying position or balance active for 44 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -4074,13 +3854,13 @@
       "age_days": 192,
       "expected_airdrop_usd": 25889.53,
       "gas_usd": 16,
-      "capital_drag_usd": 0.31,
+      "capital_drag_usd": 0.3,
       "farm_hours": 4.5,
       "growth_mult": 0.984939,
       "age_mult": 0.752603,
       "base_implied_usd": 6985201,
-      "rank": 121,
-      "ev_per_hour": 5749.6044,
+      "ev_per_hour": 5749.6067,
+      "rank": 114,
       "verdict": "thin"
     },
     {
@@ -4110,8 +3890,8 @@
       "growth_mult": 1.000455,
       "age_mult": 0.913699,
       "base_implied_usd": 5635170,
-      "rank": 122,
       "ev_per_hour": 6435.9375,
+      "rank": 115,
       "verdict": "thin"
     },
     {
@@ -4141,8 +3921,8 @@
       "growth_mult": 1,
       "age_mult": 0.909863,
       "base_implied_usd": 5584148,
-      "rank": 123,
       "ev_per_hour": 6347.96,
+      "rank": 116,
       "verdict": "thin"
     },
     {
@@ -4172,8 +3952,8 @@
       "growth_mult": 0.947301,
       "age_mult": 1,
       "base_implied_usd": 5319693,
-      "rank": 124,
       "ev_per_hour": 6715.8773,
+      "rank": 117,
       "verdict": "thin"
     },
     {
@@ -4183,8 +3963,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 37.2 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -4197,45 +3977,14 @@
       "change_7d": -1.637,
       "age_days": 276,
       "expected_airdrop_usd": 24802.97,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4,
+      "gas_usd": 13,
+      "capital_drag_usd": 0.25,
+      "farm_hours": 3.75,
       "growth_mult": 0.990178,
       "age_mult": 0.775616,
       "base_implied_usd": 6459119,
-      "rank": 125,
-      "ev_per_hour": 6197.165,
-      "verdict": "thin"
-    },
-    {
-      "slug": "communityv3",
-      "name": "CommunityV3",
-      "implied_value_usd": 4909400,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying dex action: Swap and provide about $50 in liquidity on a main pool to record DEX volume and LP activity; cost $4 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Dexs",
-      "chains": [
-        "Ethereum"
-      ],
-      "tvl_usd": 17407286,
-      "change_7d": 18.2229,
-      "age_days": 26,
-      "expected_airdrop_usd": 24547,
-      "gas_usd": 17,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 1.109337,
-      "age_mult": 0.707123,
-      "base_implied_usd": 6258491,
-      "rank": 126,
-      "ev_per_hour": 5164.1242,
+      "ev_per_hour": 6610.592,
+      "rank": 118,
       "verdict": "thin"
     },
     {
@@ -4265,8 +4014,8 @@
       "growth_mult": 0.98823,
       "age_mult": 0.817534,
       "base_implied_usd": 6068439,
-      "rank": 127,
       "ev_per_hour": 7000.7457,
+      "rank": 119,
       "verdict": "thin"
     },
     {
@@ -4296,8 +4045,8 @@
       "growth_mult": 0.957549,
       "age_mult": 1,
       "base_implied_usd": 5113658,
-      "rank": 128,
       "ev_per_hour": 6525.2507,
+      "rank": 120,
       "verdict": "thin"
     },
     {
@@ -4307,8 +4056,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 33.8 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -4321,45 +4070,14 @@
       "change_7d": -1.1868,
       "age_days": 318,
       "expected_airdrop_usd": 24329.09,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.25,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.23,
+      "farm_hours": 3.75,
       "growth_mult": 0.992879,
       "age_mult": 0.787123,
       "base_implied_usd": 6226107,
-      "rank": 129,
-      "ev_per_hour": 5721.1247,
-      "verdict": "thin"
-    },
-    {
-      "slug": "definity-staked-sol",
-      "name": "Definity Staked SOL",
-      "implied_value_usd": 4864546,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Liquid Staking",
-      "chains": [
-        "Solana"
-      ],
-      "tvl_usd": 24453416,
-      "change_7d": -13.965,
-      "age_days": 45,
-      "expected_airdrop_usd": 24322.73,
-      "gas_usd": 15,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.5,
-      "growth_mult": 0.91621,
-      "age_mult": 0.712329,
-      "base_implied_usd": 7453612,
-      "rank": 130,
-      "ev_per_hour": 5401.6267,
+      "ev_per_hour": 6484.496,
+      "rank": 121,
       "verdict": "thin"
     },
     {
@@ -4389,8 +4107,8 @@
       "growth_mult": 0.93587,
       "age_mult": 0.806575,
       "base_implied_usd": 6440404,
-      "rank": 131,
       "ev_per_hour": 6478.7947,
+      "rank": 122,
       "verdict": "thin"
     },
     {
@@ -4423,8 +4141,8 @@
       "growth_mult": 0.952312,
       "age_mult": 0.848767,
       "base_implied_usd": 6000740,
-      "rank": 132,
       "ev_per_hour": 6463.872,
+      "rank": 123,
       "verdict": "thin"
     },
     {
@@ -4457,70 +4175,8 @@
       "growth_mult": 1.000062,
       "age_mult": 0.9,
       "base_implied_usd": 5343065,
-      "rank": 133,
       "ev_per_hour": 6408.8187,
-      "verdict": "thin"
-    },
-    {
-      "slug": "flowdesk",
-      "name": "Flowdesk",
-      "implied_value_usd": 4803111,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Risk Curators",
-      "chains": [
-        "Ethereum"
-      ],
-      "tvl_usd": 28044836,
-      "change_7d": -27.6485,
-      "age_days": 73,
-      "expected_airdrop_usd": 24015.56,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 0.834109,
-      "age_mult": 0.72,
-      "base_implied_usd": 7997740,
-      "rank": 134,
-      "ev_per_hour": 5052.4526,
-      "verdict": "thin"
-    },
-    {
-      "slug": "nemo-trading",
-      "name": "NEMO Trading",
-      "implied_value_usd": 4798034,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Risk Curators",
-      "chains": [
-        "Ethereum"
-      ],
-      "tvl_usd": 20088275,
-      "change_7d": -0.7307,
-      "age_days": 56,
-      "expected_airdrop_usd": 23990.17,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 0.995616,
-      "age_mult": 0.715342,
-      "base_implied_usd": 6736860,
-      "rank": 135,
-      "ev_per_hour": 5047.1074,
+      "rank": 124,
       "verdict": "thin"
     },
     {
@@ -4530,8 +4186,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 51.4 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -4545,14 +4201,14 @@
       "change_7d": -4.984,
       "age_days": 103,
       "expected_airdrop_usd": 23860.57,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.35,
+      "farm_hours": 4.5,
       "growth_mult": 0.970096,
       "age_mult": 0.728219,
       "base_implied_usd": 6755133,
-      "rank": 136,
-      "ev_per_hour": 5019.8232,
+      "ev_per_hour": 5298.9378,
+      "rank": 125,
       "verdict": "thin"
     },
     {
@@ -4562,8 +4218,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying dex action: Swap and provide about $50 in liquidity on a main pool to record DEX volume and LP activity; cost $4 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 41.3 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -4576,45 +4232,14 @@
       "change_7d": 1.7778,
       "age_days": 226,
       "expected_airdrop_usd": 23836.5,
-      "gas_usd": 15,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.25,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.28,
+      "farm_hours": 4,
       "growth_mult": 1.010667,
       "age_mult": 0.761918,
       "base_implied_usd": 6190935,
-      "rank": 137,
-      "ev_per_hour": 5604.9859,
-      "verdict": "thin"
-    },
-    {
-      "slug": "bisonfi",
-      "name": "BisonFi",
-      "implied_value_usd": 4762555,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying dex action: Swap and provide about $50 in liquidity on a main pool to record DEX volume and LP activity; cost $4 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Dexs",
-      "chains": [
-        "Solana"
-      ],
-      "tvl_usd": 20001683,
-      "change_7d": -3.095,
-      "age_days": 80,
-      "expected_airdrop_usd": 23812.78,
-      "gas_usd": 17,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 0.98143,
-      "age_mult": 0.721918,
-      "base_implied_usd": 6721913,
-      "rank": 138,
-      "ev_per_hour": 5009.5516,
+      "ev_per_hour": 5955.555,
+      "rank": 126,
       "verdict": "thin"
     },
     {
@@ -4644,8 +4269,8 @@
       "growth_mult": 0.946777,
       "age_mult": 1,
       "base_implied_usd": 5019155,
-      "rank": 139,
       "ev_per_hour": 6785.4,
+      "rank": 127,
       "verdict": "thin"
     },
     {
@@ -4676,8 +4301,8 @@
       "growth_mult": 1.056415,
       "age_mult": 0.917808,
       "base_implied_usd": 4864251,
-      "rank": 140,
       "ev_per_hour": 6285.16,
+      "rank": 128,
       "verdict": "thin"
     },
     {
@@ -4707,8 +4332,8 @@
       "growth_mult": 0.91306,
       "age_mult": 0.802466,
       "base_implied_usd": 6396424,
-      "rank": 141,
       "ev_per_hour": 6691.7343,
+      "rank": 129,
       "verdict": "thin"
     },
     {
@@ -4739,8 +4364,8 @@
       "growth_mult": 1.0059,
       "age_mult": 0.868219,
       "base_implied_usd": 5347338,
-      "rank": 142,
       "ev_per_hour": 6668.0143,
+      "rank": 130,
       "verdict": "thin"
     },
     {
@@ -4770,8 +4395,8 @@
       "growth_mult": 0.976176,
       "age_mult": 0.807945,
       "base_implied_usd": 5777477,
-      "rank": 143,
       "ev_per_hour": 6506.0486,
+      "rank": 131,
       "verdict": "thin"
     },
     {
@@ -4801,8 +4426,8 @@
       "growth_mult": 0.975384,
       "age_mult": 0.844658,
       "base_implied_usd": 5464498,
-      "rank": 144,
       "ev_per_hour": 5999.16,
+      "rank": 132,
       "verdict": "thin"
     },
     {
@@ -4832,8 +4457,8 @@
       "growth_mult": 1.00946,
       "age_mult": 0.8,
       "base_implied_usd": 5540677,
-      "rank": 145,
       "ev_per_hour": 5961.9067,
+      "rank": 133,
       "verdict": "thin"
     },
     {
@@ -4863,8 +4488,8 @@
       "growth_mult": 0.999863,
       "age_mult": 0.808219,
       "base_implied_usd": 5510264,
-      "rank": 146,
       "ev_per_hour": 6357.7857,
+      "rank": 134,
       "verdict": "thin"
     },
     {
@@ -4894,8 +4519,8 @@
       "growth_mult": 0.933412,
       "age_mult": 0.90411,
       "base_implied_usd": 5229272,
-      "rank": 147,
       "ev_per_hour": 5879.968,
+      "rank": 135,
       "verdict": "thin"
     },
     {
@@ -4906,7 +4531,7 @@
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying lending action: Supply about $50 as collateral and borrow a small amount, keeping health factor safe to register lending usage; cost $3 in fees, duration 1h.",
         "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Hold window: keep the qualifying position or balance active for 44.1 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -4920,13 +4545,13 @@
       "age_days": 191,
       "expected_airdrop_usd": 22060.13,
       "gas_usd": 14,
-      "capital_drag_usd": 0.31,
+      "capital_drag_usd": 0.3,
       "farm_hours": 4.25,
       "growth_mult": 1.48,
       "age_mult": 0.752329,
       "base_implied_usd": 3962493,
-      "rank": 148,
-      "ev_per_hour": 5187.2518,
+      "ev_per_hour": 5187.2541,
+      "rank": 136,
       "verdict": "thin"
     },
     {
@@ -4956,8 +4581,8 @@
       "growth_mult": 0.909327,
       "age_mult": 0.82,
       "base_implied_usd": 5901620,
-      "rank": 149,
       "ev_per_hour": 6283.2714,
+      "rank": 137,
       "verdict": "thin"
     },
     {
@@ -4967,8 +4592,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 47.5 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -4981,14 +4606,14 @@
       "change_7d": -7.5244,
       "age_days": 150,
       "expected_airdrop_usd": 21844.38,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.33,
+      "farm_hours": 4.25,
       "growth_mult": 0.954854,
       "age_mult": 0.741096,
       "base_implied_usd": 6173885,
-      "rank": 150,
-      "ev_per_hour": 4595.3621,
+      "ev_per_hour": 5136.4824,
+      "rank": 138,
       "verdict": "thin"
     },
     {
@@ -5018,8 +4643,8 @@
       "growth_mult": 1.000019,
       "age_mult": 0.97863,
       "base_implied_usd": 4456652,
-      "rank": 151,
       "ev_per_hour": 5448.82,
+      "rank": 139,
       "verdict": "thin"
     },
     {
@@ -5029,8 +4654,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying rwa action: Complete onboarding steps if available and allocate about $50 to a supported RWA or yield product; cost $3 in fees, duration 1.25h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 37.7 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -5043,14 +4668,14 @@
       "change_7d": 0.0075,
       "age_days": 270,
       "expected_airdrop_usd": 21733.22,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.5,
+      "gas_usd": 13,
+      "capital_drag_usd": 0.26,
+      "farm_hours": 4.25,
       "growth_mult": 1.000045,
       "age_mult": 0.773973,
       "base_implied_usd": 5615764,
-      "rank": 152,
-      "ev_per_hour": 4826.4244,
+      "ev_per_hour": 5110.5788,
+      "rank": 140,
       "verdict": "thin"
     },
     {
@@ -5060,8 +4685,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 48.2 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -5075,14 +4700,14 @@
       "change_7d": 6.7145,
       "age_days": 142,
       "expected_airdrop_usd": 21396.88,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.33,
+      "farm_hours": 4.25,
       "growth_mult": 1.040287,
       "age_mult": 0.738904,
       "base_implied_usd": 5567229,
-      "rank": 153,
-      "ev_per_hour": 4501.1516,
+      "ev_per_hour": 5031.1882,
+      "rank": 141,
       "verdict": "thin"
     },
     {
@@ -5112,8 +4737,8 @@
       "growth_mult": 0.992031,
       "age_mult": 0.925479,
       "base_implied_usd": 4657806,
-      "rank": 154,
       "ev_per_hour": 5341.8875,
+      "rank": 142,
       "verdict": "thin"
     },
     {
@@ -5155,8 +4780,8 @@
       "growth_mult": 0.979041,
       "age_mult": 0.885479,
       "base_implied_usd": 4887072,
-      "rank": 155,
       "ev_per_hour": 6048.9486,
+      "rank": 143,
       "verdict": "thin"
     },
     {
@@ -5166,8 +4791,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying bridge action: Bridge about $50 through the protocol route and back if needed to register cross-chain transfer activity; cost $6 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 47.1 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -5180,14 +4805,14 @@
       "change_7d": -16.9412,
       "age_days": 155,
       "expected_airdrop_usd": 20745.19,
-      "gas_usd": 19,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
+      "gas_usd": 17,
+      "capital_drag_usd": 0.32,
+      "farm_hours": 4.25,
       "growth_mult": 0.898353,
       "age_mult": 0.742466,
       "base_implied_usd": 6220482,
-      "rank": 156,
-      "ev_per_hour": 4363.3221,
+      "ev_per_hour": 4877.1459,
+      "rank": 144,
       "verdict": "thin"
     },
     {
@@ -5217,8 +4842,8 @@
       "growth_mult": 0.909773,
       "age_mult": 0.944384,
       "base_implied_usd": 4786605,
-      "rank": 157,
       "ev_per_hour": 5871.8371,
+      "rank": 145,
       "verdict": "thin"
     },
     {
@@ -5248,8 +4873,8 @@
       "growth_mult": 0.939428,
       "age_mult": 0.901096,
       "base_implied_usd": 4850350,
-      "rank": 158,
       "ev_per_hour": 5862.36,
+      "rank": 146,
       "verdict": "thin"
     },
     {
@@ -5279,8 +4904,8 @@
       "growth_mult": 1.027467,
       "age_mult": 1,
       "base_implied_usd": 3973484,
-      "rank": 159,
       "ev_per_hour": 5439.9787,
+      "rank": 147,
       "verdict": "thin"
     },
     {
@@ -5310,8 +4935,8 @@
       "growth_mult": 0.948851,
       "age_mult": 0.865479,
       "base_implied_usd": 4940953,
-      "rank": 160,
       "ev_per_hour": 5793.3143,
+      "rank": 148,
       "verdict": "thin"
     },
     {
@@ -5342,8 +4967,8 @@
       "growth_mult": 1.000099,
       "age_mult": 0.801096,
       "base_implied_usd": 5044264,
-      "rank": 161,
       "ev_per_hour": 5769.8543,
+      "rank": 149,
       "verdict": "thin"
     },
     {
@@ -5353,8 +4978,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 49.8 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -5367,45 +4992,14 @@
       "change_7d": -1.5552,
       "age_days": 122,
       "expected_airdrop_usd": 19893.25,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.5,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.34,
+      "farm_hours": 4.25,
       "growth_mult": 0.990669,
       "age_mult": 0.733425,
       "base_implied_usd": 5475852,
-      "rank": 162,
-      "ev_per_hour": 4417.0756,
-      "verdict": "thin"
-    },
-    {
-      "slug": "syntetika",
-      "name": "Syntetika",
-      "implied_value_usd": 3893012,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Risk Curators",
-      "chains": [
-        "Base"
-      ],
-      "tvl_usd": 14612979,
-      "change_7d": -9.956,
-      "age_days": 87,
-      "expected_airdrop_usd": 19465.06,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 0.940264,
-      "age_mult": 0.723836,
-      "base_implied_usd": 5720000,
-      "rank": 163,
-      "ev_per_hour": 4094.4526,
+      "ev_per_hour": 4677.1553,
+      "rank": 150,
       "verdict": "thin"
     },
     {
@@ -5435,8 +5029,8 @@
       "growth_mult": 0.937193,
       "age_mult": 0.934247,
       "base_implied_usd": 4435422,
-      "rank": 164,
       "ev_per_hour": 5174.7707,
+      "rank": 151,
       "verdict": "thin"
     },
     {
@@ -5467,8 +5061,8 @@
       "growth_mult": 0.938509,
       "age_mult": 0.927123,
       "base_implied_usd": 4440991,
-      "rank": 165,
       "ev_per_hour": 5148.168,
+      "rank": 152,
       "verdict": "thin"
     },
     {
@@ -5498,8 +5092,8 @@
       "growth_mult": 0.947661,
       "age_mult": 0.813699,
       "base_implied_usd": 4976443,
-      "rank": 166,
       "ev_per_hour": 5478.7771,
+      "rank": 153,
       "verdict": "thin"
     },
     {
@@ -5529,8 +5123,8 @@
       "growth_mult": 0.939419,
       "age_mult": 1,
       "base_implied_usd": 4050830,
-      "rank": 167,
       "ev_per_hour": 5070.3787,
+      "rank": 154,
       "verdict": "thin"
     },
     {
@@ -5563,8 +5157,8 @@
       "growth_mult": 0.949549,
       "age_mult": 1,
       "base_implied_usd": 3993939,
-      "rank": 168,
       "ev_per_hour": 5053.0667,
+      "rank": 155,
       "verdict": "thin"
     },
     {
@@ -5574,8 +5168,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 33.7 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -5588,14 +5182,14 @@
       "change_7d": 5.3326,
       "age_days": 319,
       "expected_airdrop_usd": 18889.53,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.23,
+      "farm_hours": 3.5,
       "growth_mult": 1.031996,
       "age_mult": 0.787397,
       "base_implied_usd": 4649212,
-      "rank": 169,
-      "ev_per_hour": 4718.805,
+      "ev_per_hour": 5393.5143,
+      "rank": 156,
       "verdict": "thin"
     },
     {
@@ -5625,8 +5219,8 @@
       "growth_mult": 0.930943,
       "age_mult": 1,
       "base_implied_usd": 4056239,
-      "rank": 170,
       "ev_per_hour": 5391.2657,
+      "rank": 157,
       "verdict": "thin"
     },
     {
@@ -5663,39 +5257,8 @@
       "growth_mult": 0.96153,
       "age_mult": 0.846575,
       "base_implied_usd": 4622797,
-      "rank": 171,
       "ev_per_hour": 5014.0693,
-      "verdict": "thin"
-    },
-    {
-      "slug": "raiku-staked-sol",
-      "name": "Raiku Staked SOL",
-      "implied_value_usd": 3718524,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Liquid Staking",
-      "chains": [
-        "Solana"
-      ],
-      "tvl_usd": 14028032,
-      "change_7d": -11.9875,
-      "age_days": 56,
-      "expected_airdrop_usd": 18592.62,
-      "gas_usd": 15,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.5,
-      "growth_mult": 0.928075,
-      "age_mult": 0.715342,
-      "base_implied_usd": 5601102,
-      "rank": 172,
-      "ev_per_hour": 4128.2689,
+      "rank": 158,
       "verdict": "thin"
     },
     {
@@ -5705,8 +5268,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 37.5 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -5721,14 +5284,14 @@
       "change_7d": -2.7551,
       "age_days": 273,
       "expected_airdrop_usd": 18549.71,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4,
+      "gas_usd": 13,
+      "capital_drag_usd": 0.26,
+      "farm_hours": 3.75,
       "growth_mult": 0.983469,
       "age_mult": 0.774795,
       "base_implied_usd": 4868775,
-      "rank": 173,
-      "ev_per_hour": 4633.85,
+      "ev_per_hour": 4943.0533,
+      "rank": 159,
       "verdict": "thin"
     },
     {
@@ -5758,8 +5321,8 @@
       "growth_mult": 0.95138,
       "age_mult": 0.8,
       "base_implied_usd": 4825311,
-      "rank": 174,
       "ev_per_hour": 4893.4933,
+      "rank": 160,
       "verdict": "thin"
     },
     {
@@ -5769,8 +5332,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 32.7 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -5786,14 +5349,14 @@
       "change_7d": -10.0236,
       "age_days": 332,
       "expected_airdrop_usd": 17980.56,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.25,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.22,
+      "farm_hours": 3.75,
       "growth_mult": 0.939858,
       "age_mult": 0.790959,
       "base_implied_usd": 4837455,
-      "rank": 175,
-      "ev_per_hour": 4227.3529,
+      "ev_per_hour": 4791.5573,
+      "rank": 161,
       "verdict": "thin"
     },
     {
@@ -5823,8 +5386,8 @@
       "growth_mult": 0.958493,
       "age_mult": 0.837534,
       "base_implied_usd": 4427073,
-      "rank": 176,
       "ev_per_hour": 4735.0453,
+      "rank": 162,
       "verdict": "thin"
     },
     {
@@ -5854,8 +5417,8 @@
       "growth_mult": 0.901119,
       "age_mult": 1,
       "base_implied_usd": 3933223,
-      "rank": 177,
       "ev_per_hour": 5060.0857,
+      "rank": 163,
       "verdict": "thin"
     },
     {
@@ -5866,7 +5429,7 @@
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying lending action: Supply about $50 as collateral and borrow a small amount, keeping health factor safe to register lending usage; cost $3 in fees, duration 1h.",
         "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Hold window: keep the qualifying position or balance active for 44.8 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -5885,8 +5448,8 @@
       "growth_mult": 0.889313,
       "age_mult": 0.750137,
       "base_implied_usd": 5308481,
-      "rank": 178,
       "ev_per_hour": 4162.8965,
+      "rank": 164,
       "verdict": "thin"
     },
     {
@@ -5916,39 +5479,8 @@
       "growth_mult": 0.928374,
       "age_mult": 0.896438,
       "base_implied_usd": 4242107,
-      "rank": 179,
       "ev_per_hour": 5040.2429,
-      "verdict": "thin"
-    },
-    {
-      "slug": "tessera-v",
-      "name": "Tessera V",
-      "implied_value_usd": 3504366,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying dex action: Swap and provide about $50 in liquidity on a main pool to record DEX volume and LP activity; cost $4 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Dexs",
-      "chains": [
-        "Solana"
-      ],
-      "tvl_usd": 11128196,
-      "change_7d": -3.7732,
-      "age_days": 77,
-      "expected_airdrop_usd": 17521.83,
-      "gas_usd": 17,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 0.977361,
-      "age_mult": 0.721096,
-      "base_implied_usd": 4972348,
-      "rank": 180,
-      "ev_per_hour": 3685.1411,
+      "rank": 165,
       "verdict": "thin"
     },
     {
@@ -5978,8 +5510,8 @@
       "growth_mult": 0.923813,
       "age_mult": 0.8,
       "base_implied_usd": 4733074,
-      "rank": 181,
       "ev_per_hour": 4660.4533,
+      "rank": 166,
       "verdict": "thin"
     },
     {
@@ -6009,8 +5541,8 @@
       "growth_mult": 0.970269,
       "age_mult": 0.806301,
       "base_implied_usd": 4463041,
-      "rank": 182,
       "ev_per_hour": 4652.1707,
+      "rank": 167,
       "verdict": "thin"
     },
     {
@@ -6020,8 +5552,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying lending action: Supply about $50 as collateral and borrow a small amount, keeping health factor safe to register lending usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 45.2 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -6034,14 +5566,14 @@
       "change_7d": 0.3217,
       "age_days": 178,
       "expected_airdrop_usd": 16935.06,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.31,
+      "farm_hours": 4.25,
       "growth_mult": 1.00193,
       "age_mult": 0.748767,
       "base_implied_usd": 4514736,
-      "rank": 183,
-      "ev_per_hour": 3561.8211,
+      "ev_per_hour": 3981.3529,
+      "rank": 168,
       "verdict": "thin"
     },
     {
@@ -6082,8 +5614,8 @@
       "growth_mult": 0.930349,
       "age_mult": 0.848767,
       "base_implied_usd": 4281907,
-      "rank": 184,
       "ev_per_hour": 4505.0187,
+      "rank": 169,
       "verdict": "thin"
     },
     {
@@ -6113,8 +5645,8 @@
       "growth_mult": 0.936511,
       "age_mult": 0.84137,
       "base_implied_usd": 4251412,
-      "rank": 185,
       "ev_per_hour": 4462.4907,
+      "rank": 170,
       "verdict": "thin"
     },
     {
@@ -6124,8 +5656,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying perps action: Deposit about $50 as margin and place a small hedged perpetual position to register trading activity; cost $5 in fees, duration 1.25h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30.5 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -6138,47 +5670,14 @@
       "change_7d": -4.5952,
       "age_days": 359,
       "expected_airdrop_usd": 16666.74,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.5,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 4,
       "growth_mult": 0.972429,
       "age_mult": 0.798356,
       "base_implied_usd": 4293644,
-      "rank": 186,
-      "ev_per_hour": 3700.0956,
-      "verdict": "thin"
-    },
-    {
-      "slug": "sharpbyte-capital",
-      "name": "SharpByte Capital",
-      "implied_value_usd": 3329145,
-      "farm_steps": [
-        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
-        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
-        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
-        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
-      ],
-      "category": "Risk Curators",
-      "chains": [
-        "Monad",
-        "Ethereum",
-        "Fluent"
-      ],
-      "tvl_usd": 10649873,
-      "change_7d": -8.0812,
-      "age_days": 72,
-      "expected_airdrop_usd": 16645.72,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 0.951513,
-      "age_mult": 0.719726,
-      "base_implied_usd": 4861282,
-      "rank": 187,
-      "ev_per_hour": 3500.9074,
+      "ev_per_hour": 4163.1325,
+      "rank": 171,
       "verdict": "thin"
     },
     {
@@ -6208,8 +5707,8 @@
       "growth_mult": 0.903443,
       "age_mult": 0.8,
       "base_implied_usd": 4555003,
-      "rank": 188,
       "ev_per_hour": 4386.2773,
+      "rank": 172,
       "verdict": "thin"
     },
     {
@@ -6242,8 +5741,170 @@
       "growth_mult": 0.939076,
       "age_mult": 0.848767,
       "base_implied_usd": 4125394,
-      "rank": 189,
       "ev_per_hour": 4380.976,
+      "rank": 173,
+      "verdict": "thin"
+    },
+    {
+      "slug": "prime-staking",
+      "name": "Prime Staking",
+      "implied_value_usd": 3280864,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Liquid Staking",
+      "chains": [
+        "XDC"
+      ],
+      "tvl_usd": 6911175,
+      "change_7d": -8.007,
+      "age_days": 677,
+      "expected_airdrop_usd": 16404.32,
+      "gas_usd": 11,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.5,
+      "growth_mult": 0.951958,
+      "age_mult": 0.885479,
+      "base_implied_usd": 3892171,
+      "ev_per_hour": 4683.7457,
+      "rank": 174,
+      "verdict": "thin"
+    },
+    {
+      "slug": "kton",
+      "name": "KTON",
+      "implied_value_usd": 3264305,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Liquid Staking",
+      "chains": [
+        "TON"
+      ],
+      "tvl_usd": 6728325,
+      "change_7d": -0.4447,
+      "age_days": 557,
+      "expected_airdrop_usd": 16321.53,
+      "gas_usd": 11,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.5,
+      "growth_mult": 0.997332,
+      "age_mult": 0.852603,
+      "base_implied_usd": 3838878,
+      "ev_per_hour": 4660.0914,
+      "rank": 175,
+      "verdict": "thin"
+    },
+    {
+      "slug": "btcfi-cdp",
+      "name": "BTCFi CDP",
+      "implied_value_usd": 3254751,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying lending action: Supply about $50 as collateral and borrow a small amount, keeping health factor safe to register lending usage; cost $3 in fees, duration 1h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "CDP",
+      "chains": [
+        "Bifrost Network",
+        "Bitcoin",
+        "Base",
+        "CORE"
+      ],
+      "tvl_usd": 6039993,
+      "change_7d": -10.494,
+      "age_days": 936,
+      "expected_airdrop_usd": 16273.76,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.75,
+      "growth_mult": 0.937036,
+      "age_mult": 0.956438,
+      "base_implied_usd": 3631654,
+      "ev_per_hour": 4336.4133,
+      "rank": 176,
+      "verdict": "thin"
+    },
+    {
+      "slug": "wan-bridge",
+      "name": "Wan Bridge",
+      "implied_value_usd": 3223080,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying bridge action: Bridge about $50 through the protocol route and back if needed to register cross-chain transfer activity; cost $6 in fees, duration 1h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Bridge",
+      "chains": [
+        "Ethereum",
+        "Ripple",
+        "Cardano",
+        "Bitcoin",
+        "Arbitrum",
+        "Solana",
+        "Binance",
+        "Optimism",
+        "Avalanche",
+        "Polygon",
+        "Base",
+        "Wanchain",
+        "Metis",
+        "zkSync Era",
+        "Celo",
+        "Linea",
+        "Litecoin",
+        "X Layer",
+        "Astar",
+        "XDC",
+        "Doge",
+        "Fantom",
+        "Op_Bnb",
+        "Noble",
+        "Moonriver",
+        "Moonbeam",
+        "Tron",
+        "OKExChain",
+        "Telos",
+        "FunctionX",
+        "Blast",
+        "Polygon zkEVM",
+        "Bitrock",
+        "Energi",
+        "Odyssey",
+        "Songbird"
+      ],
+      "tvl_usd": 5193861,
+      "change_7d": -6.8148,
+      "age_days": 1524,
+      "expected_airdrop_usd": 16115.4,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.75,
+      "growth_mult": 0.959111,
+      "age_mult": 1,
+      "base_implied_usd": 3360486,
+      "ev_per_hour": 4293.384,
+      "rank": 177,
       "verdict": "thin"
     },
     {
@@ -6253,8 +5914,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying dex action: Swap and provide about $50 in liquidity on a main pool to record DEX volume and LP activity; cost $4 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 34.1 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -6267,14 +5928,110 @@
       "change_7d": 2.0802,
       "age_days": 315,
       "expected_airdrop_usd": 15742.08,
-      "gas_usd": 15,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.25,
+      "gas_usd": 13,
+      "capital_drag_usd": 0.23,
+      "farm_hours": 3.75,
       "growth_mult": 1.012481,
       "age_mult": 0.786301,
       "base_implied_usd": 3954723,
-      "rank": 190,
-      "ev_per_hour": 3700.4165,
+      "ev_per_hour": 4194.36,
+      "rank": 178,
+      "verdict": "thin"
+    },
+    {
+      "slug": "stablehodl",
+      "name": "StableHodl",
+      "implied_value_usd": 3130344,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Yield",
+      "chains": [
+        "Polygon",
+        "Ethereum",
+        "Binance",
+        "HeLa"
+      ],
+      "tvl_usd": 6358544,
+      "change_7d": 0.0056,
+      "age_days": 509,
+      "expected_airdrop_usd": 15651.72,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.5,
+      "growth_mult": 1.000034,
+      "age_mult": 0.839452,
+      "base_implied_usd": 3728907,
+      "ev_per_hour": 4468.4314,
+      "rank": 179,
+      "verdict": "thin"
+    },
+    {
+      "slug": "endurance-bridge",
+      "name": "Endurance Bridge",
+      "implied_value_usd": 3079296,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying bridge action: Bridge about $50 through the protocol route and back if needed to register cross-chain transfer activity; cost $6 in fees, duration 1h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Bridge",
+      "chains": [
+        "Endurance"
+      ],
+      "tvl_usd": 5816749,
+      "change_7d": -15.1994,
+      "age_days": 917,
+      "expected_airdrop_usd": 15396.48,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.75,
+      "growth_mult": 0.908804,
+      "age_mult": 0.951233,
+      "base_implied_usd": 3562005,
+      "ev_per_hour": 4101.672,
+      "rank": 180,
+      "verdict": "thin"
+    },
+    {
+      "slug": "biquid",
+      "name": "Biquid",
+      "implied_value_usd": 3076677,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Liquid Staking",
+      "chains": [
+        "Bifrost Network"
+      ],
+      "tvl_usd": 5743699,
+      "change_7d": -4.6346,
+      "age_days": 709,
+      "expected_airdrop_usd": 15383.39,
+      "gas_usd": 11,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.5,
+      "growth_mult": 0.972192,
+      "age_mult": 0.894247,
+      "base_implied_usd": 3538933,
+      "ev_per_hour": 4392.0514,
+      "rank": 181,
       "verdict": "thin"
     },
     {
@@ -6284,8 +6041,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying rwa action: Complete onboarding steps if available and allocate about $50 to a supported RWA or yield product; cost $3 in fees, duration 1.25h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 38.4 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -6300,45 +6057,108 @@
       "change_7d": -0.0025,
       "age_days": 262,
       "expected_airdrop_usd": 15325.83,
-      "gas_usd": 14,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.5,
+      "gas_usd": 13,
+      "capital_drag_usd": 0.26,
+      "farm_hours": 4.25,
       "growth_mult": 0.999985,
       "age_mult": 0.771781,
       "base_implied_usd": 3971609,
-      "rank": 191,
-      "ev_per_hour": 3402.56,
+      "ev_per_hour": 3602.9576,
+      "rank": 182,
       "verdict": "thin"
     },
     {
-      "slug": "icarus-cl",
-      "name": "Icarus CL",
-      "implied_value_usd": 3038678,
+      "slug": "inceptionlrt-(isolated-restaking)",
+      "name": "InceptionLRT (Isolated Restaking)",
+      "implied_value_usd": 3054333,
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying dex action: Swap and provide about $50 in liquidity on a main pool to record DEX volume and LP activity; cost $4 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
       ],
-      "category": "Dexs",
+      "category": "Liquid Restaking",
       "chains": [
-        "RISE"
+        "Ethereum"
       ],
-      "tvl_usd": 8023861,
-      "change_7d": -0.0588,
-      "age_days": 85,
-      "expected_airdrop_usd": 15193.39,
-      "gas_usd": 17,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 0.999647,
-      "age_mult": 0.723288,
-      "base_implied_usd": 4202685,
-      "rank": 192,
-      "ev_per_hour": 3194.9432,
+      "tvl_usd": 5352149,
+      "change_7d": -14.3324,
+      "age_days": 1019,
+      "expected_airdrop_usd": 15271.67,
+      "gas_usd": 11,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.5,
+      "growth_mult": 0.914006,
+      "age_mult": 0.979178,
+      "base_implied_usd": 3412761,
+      "ev_per_hour": 4360.1314,
+      "rank": 183,
+      "verdict": "thin"
+    },
+    {
+      "slug": "turboflow-perps",
+      "name": "TurboFlow Perps",
+      "implied_value_usd": 3047201,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying perps action: Deposit about $50 as margin and place a small hedged perpetual position to register trading activity; cost $5 in fees, duration 1.25h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Derivatives",
+      "chains": [
+        "Binance",
+        "Solana"
+      ],
+      "tvl_usd": 6664850,
+      "change_7d": -0.9998,
+      "age_days": 374,
+      "expected_airdrop_usd": 15236.01,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 4,
+      "growth_mult": 0.994001,
+      "age_mult": 0.802466,
+      "base_implied_usd": 3820214,
+      "ev_per_hour": 3805.45,
+      "rank": 184,
+      "verdict": "thin"
+    },
+    {
+      "slug": "granite",
+      "name": "Granite",
+      "implied_value_usd": 3024998,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying lending action: Supply about $50 as collateral and borrow a small amount, keeping health factor safe to register lending usage; cost $3 in fees, duration 1h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Lending",
+      "chains": [
+        "Stacks"
+      ],
+      "tvl_usd": 6183687,
+      "change_7d": -4.2845,
+      "age_days": 528,
+      "expected_airdrop_usd": 15124.99,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.75,
+      "growth_mult": 0.974293,
+      "age_mult": 0.844658,
+      "base_implied_usd": 3675825,
+      "ev_per_hour": 4030.0747,
+      "rank": 185,
       "verdict": "thin"
     },
     {
@@ -6348,8 +6168,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying perps action: Deposit about $50 as margin and place a small hedged perpetual position to register trading activity; cost $5 in fees, duration 1.25h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 46.8 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -6362,46 +6182,45 @@
       "change_7d": 0.4638,
       "age_days": 159,
       "expected_airdrop_usd": 15105.87,
-      "gas_usd": 18,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 5,
+      "gas_usd": 16,
+      "capital_drag_usd": 0.32,
+      "farm_hours": 4.5,
       "growth_mult": 1.002783,
       "age_mult": 0.743562,
       "base_implied_usd": 4051836,
-      "rank": 193,
-      "ev_per_hour": 3017.492,
+      "ev_per_hour": 3353.2333,
+      "rank": 186,
       "verdict": "thin"
     },
     {
-      "slug": "pangolins",
-      "name": "Pangolins",
-      "implied_value_usd": 2998173,
+      "slug": "boros",
+      "name": "Boros",
+      "implied_value_usd": 3002368,
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Qualifying perps action: Deposit about $50 as margin and place a small hedged perpetual position to register trading activity; cost $5 in fees, duration 1.25h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
       ],
-      "category": "Risk Curators",
+      "category": "Interest Rate Derivatives",
       "chains": [
-        "Base",
-        "Binance"
+        "Arbitrum"
       ],
-      "tvl_usd": 8184353,
-      "change_7d": -3.0776,
-      "age_days": 71,
-      "expected_airdrop_usd": 14990.87,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
-      "growth_mult": 0.981534,
-      "age_mult": 0.719452,
-      "base_implied_usd": 4245700,
-      "rank": 194,
-      "ev_per_hour": 3152.5179,
+      "tvl_usd": 6838100,
+      "change_7d": -10.3792,
+      "age_days": 464,
+      "expected_airdrop_usd": 15011.84,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 4,
+      "growth_mult": 0.937725,
+      "age_mult": 0.827123,
+      "base_implied_usd": 3870956,
+      "ev_per_hour": 3749.4075,
+      "rank": 187,
       "verdict": "thin"
     },
     {
@@ -6431,8 +6250,8 @@
       "growth_mult": 0.973106,
       "age_mult": 0.749315,
       "base_implied_usd": 4102639,
-      "rank": 195,
       "ev_per_hour": 3515.8024,
+      "rank": 188,
       "verdict": "thin"
     },
     {
@@ -6442,8 +6261,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying bridge action: Bridge about $50 through the protocol route and back if needed to register cross-chain transfer activity; cost $6 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 36.5 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -6457,45 +6276,76 @@
       "change_7d": -10.4947,
       "age_days": 285,
       "expected_airdrop_usd": 14883.95,
-      "gas_usd": 17,
-      "capital_drag_usd": 0.31,
-      "farm_hours": 4.25,
+      "gas_usd": 16,
+      "capital_drag_usd": 0.25,
+      "farm_hours": 4,
       "growth_mult": 0.937032,
       "age_mult": 0.778082,
       "base_implied_usd": 4082897,
-      "rank": 196,
-      "ev_per_hour": 3498.0329,
+      "ev_per_hour": 3716.925,
+      "rank": 189,
       "verdict": "thin"
     },
     {
-      "slug": "valantis-sthype-restaking",
-      "name": "Valantis stHYPE Restaking",
-      "implied_value_usd": 2967718,
+      "slug": "sophon-bridge",
+      "name": "Sophon Bridge",
+      "implied_value_usd": 2968050,
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
-        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Qualifying bridge action: Bridge about $50 through the protocol route and back if needed to register cross-chain transfer activity; cost $6 in fees, duration 1h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
       ],
-      "category": "Restaking",
+      "category": "Canonical Bridge",
       "chains": [
-        "Hyperliquid L1"
+        "Ethereum"
       ],
-      "tvl_usd": 8193911,
-      "change_7d": -1.3102,
-      "age_days": 15,
-      "expected_airdrop_usd": 14838.59,
+      "tvl_usd": 5166379,
+      "change_7d": 0.2355,
+      "age_days": 673,
+      "expected_airdrop_usd": 14840.25,
       "gas_usd": 15,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.5,
-      "growth_mult": 0.992139,
-      "age_mult": 0.70411,
-      "base_implied_usd": 4248249,
-      "rank": 197,
-      "ev_per_hour": 3294.04,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.75,
+      "growth_mult": 1.001413,
+      "age_mult": 0.884384,
+      "base_implied_usd": 3351331,
+      "ev_per_hour": 3953.344,
+      "rank": 190,
+      "verdict": "thin"
+    },
+    {
+      "slug": "shmonad",
+      "name": "ShMonad",
+      "implied_value_usd": 2903092,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30.9 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Liquid Staking",
+      "chains": [
+        "Monad"
+      ],
+      "tvl_usd": 5875911,
+      "change_7d": 2.8859,
+      "age_days": 354,
+      "expected_airdrop_usd": 14515.46,
+      "gas_usd": 11,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.5,
+      "growth_mult": 1.017315,
+      "age_mult": 0.796986,
+      "base_implied_usd": 3580587,
+      "ev_per_hour": 4144.0714,
+      "rank": 191,
       "verdict": "thin"
     },
     {
@@ -6505,8 +6355,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying rwa action: Complete onboarding steps if available and allocate about $50 to a supported RWA or yield product; cost $3 in fees, duration 1.25h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 49.4 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -6519,14 +6369,14 @@
       "change_7d": -0.5323,
       "age_days": 127,
       "expected_airdrop_usd": 14349.89,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 5,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.34,
+      "farm_hours": 4.75,
       "growth_mult": 0.996806,
       "age_mult": 0.734795,
       "base_implied_usd": 3918337,
-      "rank": 198,
-      "ev_per_hour": 2866.696,
+      "ev_per_hour": 3017.8,
+      "rank": 192,
       "verdict": "thin"
     },
     {
@@ -6536,8 +6386,8 @@
       "farm_steps": [
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
-        "Weekly activity: repeat a small on-chain interaction each week for 9 weeks to keep usage consistent; total cost $9, total duration 2.25h.",
-        "Hold window: keep the qualifying position or balance active for 60 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 51 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -6551,14 +6401,14 @@
       "change_7d": -9.3921,
       "age_days": 108,
       "expected_airdrop_usd": 14240.67,
-      "gas_usd": 16,
-      "capital_drag_usd": 0.41,
-      "farm_hours": 4.75,
+      "gas_usd": 15,
+      "capital_drag_usd": 0.35,
+      "farm_hours": 4.5,
       "growth_mult": 0.943647,
       "age_mult": 0.729589,
       "base_implied_usd": 4136873,
-      "rank": 199,
-      "ev_per_hour": 2994.5811,
+      "ev_per_hour": 3161.1822,
+      "rank": 193,
       "verdict": "thin"
     },
     {
@@ -6569,7 +6419,7 @@
         "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
         "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
         "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
-        "Hold window: keep the qualifying position or balance active for 45 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Hold window: keep the qualifying position or balance active for 43.9 days to build account age and sustained usage; ongoing monitoring time included above.",
         "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
         "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
         "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
@@ -6583,13 +6433,208 @@
       "age_days": 193,
       "expected_airdrop_usd": 14218.82,
       "gas_usd": 14,
-      "capital_drag_usd": 0.31,
+      "capital_drag_usd": 0.3,
       "farm_hours": 4.25,
       "growth_mult": 0.940834,
       "age_mult": 0.752877,
       "base_implied_usd": 4014733,
+      "ev_per_hour": 3342.24,
+      "rank": 194,
+      "verdict": "thin"
+    },
+    {
+      "slug": "aftermath-aflp",
+      "name": "Aftermath afLP",
+      "implied_value_usd": 2839760,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 6 weeks to keep usage consistent; total cost $6, total duration 1.5h.",
+        "Hold window: keep the qualifying position or balance active for 40.7 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Yield",
+      "chains": [
+        "Sui"
+      ],
+      "tvl_usd": 6451190,
+      "change_7d": -1.7294,
+      "age_days": 233,
+      "expected_airdrop_usd": 14198.8,
+      "gas_usd": 13,
+      "capital_drag_usd": 0.28,
+      "farm_hours": 3.75,
+      "growth_mult": 0.989624,
+      "age_mult": 0.763836,
+      "base_implied_usd": 3756745,
+      "ev_per_hour": 3782.8053,
+      "rank": 195,
+      "verdict": "thin"
+    },
+    {
+      "slug": "valdora-finance",
+      "name": "Valdora Finance",
+      "implied_value_usd": 2737606,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying staking action: Stake about $50 (or the minimum accepted amount) through the protocol to register staking participation; cost $2 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Liquid Staking",
+      "chains": [
+        "ZIGChain"
+      ],
+      "tvl_usd": 6208480,
+      "change_7d": -11.8803,
+      "age_days": 366,
+      "expected_airdrop_usd": 13688.03,
+      "gas_usd": 11,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.5,
+      "growth_mult": 0.928718,
+      "age_mult": 0.800274,
+      "base_implied_usd": 3683395,
+      "ev_per_hour": 3907.6629,
+      "rank": 196,
+      "verdict": "thin"
+    },
+    {
+      "slug": "alphagrowth",
+      "name": "alphagrowth",
+      "implied_value_usd": 2728804,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying general action: Use the protocol's primary on-chain action with about $50 to register meaningful usage; cost $3 in fees, duration 1h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Risk Curators",
+      "chains": [
+        "Base",
+        "Unichain",
+        "Ethereum",
+        "Linea",
+        "Monad"
+      ],
+      "tvl_usd": 5798353,
+      "change_7d": -9.0719,
+      "age_days": 407,
+      "expected_airdrop_usd": 13644.02,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.75,
+      "growth_mult": 0.945569,
+      "age_mult": 0.811507,
+      "base_implied_usd": 3556208,
+      "ev_per_hour": 3635.1493,
+      "rank": 197,
+      "verdict": "thin"
+    },
+    {
+      "slug": "flying-tulip-ftusd",
+      "name": "Flying Tulip ftUSD",
+      "implied_value_usd": 2634708,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 7 weeks to keep usage consistent; total cost $7, total duration 1.75h.",
+        "Hold window: keep the qualifying position or balance active for 43.3 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Yield Aggregator",
+      "chains": [
+        "Ethereum",
+        "Sonic",
+        "Binance"
+      ],
+      "tvl_usd": 5694315,
+      "change_7d": -1.6033,
+      "age_days": 201,
+      "expected_airdrop_usd": 13173.54,
+      "gas_usd": 14,
+      "capital_drag_usd": 0.3,
+      "farm_hours": 4,
+      "growth_mult": 0.99038,
+      "age_mult": 0.755068,
+      "base_implied_usd": 3523255,
+      "ev_per_hour": 3289.81,
+      "rank": 198,
+      "verdict": "thin"
+    },
+    {
+      "slug": "temple",
+      "name": "Temple",
+      "implied_value_usd": 2607837,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying dex action: Swap and provide about $50 in liquidity on a main pool to record DEX volume and LP activity; cost $4 in fees, duration 1h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 8 weeks to keep usage consistent; total cost $8, total duration 2h.",
+        "Hold window: keep the qualifying position or balance active for 52.1 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Dexs",
+      "chains": [
+        "Canton"
+      ],
+      "tvl_usd": 6296885,
+      "change_7d": -5.3161,
+      "age_days": 95,
+      "expected_airdrop_usd": 13039.19,
+      "gas_usd": 16,
+      "capital_drag_usd": 0.36,
+      "farm_hours": 4.5,
+      "growth_mult": 0.968103,
+      "age_mult": 0.726027,
+      "base_implied_usd": 3710271,
+      "ev_per_hour": 2893.9622,
+      "rank": 199,
+      "verdict": "thin"
+    },
+    {
+      "slug": "nucleus",
+      "name": "Nucleus",
+      "implied_value_usd": 2515593,
+      "farm_steps": [
+        "Fresh wallet hygiene: fund a dedicated wallet and bridge or swap working capital of about $50; cost $2 in fees, duration 0.5h.",
+        "Qualifying vaults action: Deposit about $50 into a core yield vault or strategy to register on-chain capital allocation activity; cost $3 in fees, duration 0.75h.",
+        "Weekly activity: repeat a small on-chain interaction each week for 5 weeks to keep usage consistent; total cost $5, total duration 1.25h.",
+        "Hold window: keep the qualifying position or balance active for 30 days to build account age and sustained usage; ongoing monitoring time included above.",
+        "Points and rewards check: review the protocol's points, quests, or rewards page each week and confirm transactions recorded; cost $0, duration 0.25h.",
+        "Exit and unwind: close positions, withdraw funds, and reconcile balances at the end of the window; cost $2 in fees, duration 0.5h.",
+        "Farm log: record wallet, tx hashes, dates, costs, and outcomes in a simple log for future claims; cost $0, duration 0.25h."
+      ],
+      "category": "Yield Aggregator",
+      "chains": [
+        "Plume Mainnet",
+        "Ethereum",
+        "Arbitrum",
+        "Swellchain"
+      ],
+      "tvl_usd": 5007171,
+      "change_7d": -24.2361,
+      "age_days": 703,
+      "expected_airdrop_usd": 12577.97,
+      "gas_usd": 12,
+      "capital_drag_usd": 0.21,
+      "farm_hours": 3.5,
+      "growth_mult": 0.854583,
+      "age_mult": 0.892603,
+      "base_implied_usd": 3297826,
+      "ev_per_hour": 3590.2171,
       "rank": 200,
-      "ev_per_hour": 3342.2376,
       "verdict": "thin"
     }
   ]

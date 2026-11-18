@@ -103,6 +103,22 @@ function isString(x: unknown): x is string {
   return typeof x === 'string';
 }
 
+// Code-unit ordering is locale-independent, so ties resolve identically on every machine.
+function compareCodeUnit(a: string, b: string): number {
+  return a < b ? -1 : a > b ? 1 : 0;
+}
+
+// Parsing the same UTC day for hundreds of protocols is pure waste; cache by the date string.
+const dayEpochCache = new Map<string, number>();
+function dayEpoch(day: string): number {
+  let epoch = dayEpochCache.get(day);
+  if (epoch === undefined) {
+    epoch = Date.parse(day + 'T00:00:00Z');
+    dayEpochCache.set(day, epoch);
+  }
+  return epoch;
+}
+
 function asNullableString(x: unknown, field: string): string | null {
   if (x === null) return null;
   if (typeof x === 'string') return x;
@@ -179,8 +195,8 @@ export function isPreToken(p: Protocol): boolean {
 // Whole days between as_of and listed_at (UTC day difference); null when listed_at is null.
 export function ageDays(asOf: string, listedAt: string | null): number | null {
   if (listedAt === null) return null;
-  const a = Date.parse(asOf + 'T00:00:00Z');
-  const l = Date.parse(listedAt + 'T00:00:00Z');
+  const a = dayEpoch(asOf);
+  const l = dayEpoch(listedAt);
   if (!Number.isFinite(a) || !Number.isFinite(l)) return null;
   const diff = Math.floor((a - l) / 86400000);
   return diff < 0 ? 0 : diff;
@@ -194,7 +210,7 @@ function isComparable(p: Protocol): boolean {
   return p.mcap_usd !== null && p.mcap_usd > 0 && p.tvl_usd > 0 && p.category !== 'CEX' && !hasVersionMarker(p.name);
 }
 
-function isRankablePreToken(p: Protocol): boolean {
+export function isRankablePreToken(p: Protocol): boolean {
   return isPreToken(p) && p.category !== 'CEX' && !hasVersionMarker(p.name);
 }
 
@@ -442,11 +458,13 @@ function tvlTier(tvl: number): { capital: number; label: string } {
   return { capital: 50, label: 'early' };
 }
 
+// Hold windows are interpolated between age anchors (0d -> 60, 180d -> 45, 365d+ -> 30)
+// instead of jumping at thresholds, so nearby protocols get nearby plans. Unknown age uses
+// the middle of the range (a year), matching the age multiplier's convention.
 function holdWindow(age: number | null): number {
-  const a = age === null ? 365 : age;
-  if (a >= 365) return 30;
-  if (a >= 180) return 45;
-  return 60;
+  const a = clamp(age === null ? 365 : age, 0, 365);
+  if (a <= 180) return roundTo(60 - (a / 180) * 15, 1);
+  return roundTo(45 - ((a - 180) / 185) * 15, 1);
 }
 
 function qualifyingAction(keyword: string, capital: number): { text: string; cost: number; hours: number } {
@@ -527,26 +545,35 @@ function verdictFor(evPerHour: number, medianEv: number): 'farm' | 'thin' | 'ski
   return 'skip';
 }
 
-function buildBoardWithModel(snapshot: Snapshot, model: ValueModel): BoardRow[] {
-  const bySlug = new Map(snapshot.protocols.map((p) => [p.slug, p]));
-
+// Fallback sweep for direct model API users; the entry injects its own batched, scored sweep.
+// One pass over the protocols, with a deterministic TVL/slug tie-break when the cap bites.
+function defaultSweep(snapshot: Snapshot): Set<string> {
   const selected = new Set<string>();
-  const addSlug = (slug: string) => { if (bySlug.has(slug)) selected.add(slug); };
-  for (const slug of snapshot.watchlist) addSlug(slug);
+  for (const slug of snapshot.watchlist) selected.add(slug);
+  const belowFloor: Protocol[] = [];
+  for (const p of snapshot.protocols) {
+    if (isRankablePreToken(p) && p.tvl_usd < snapshot.floor_usd) belowFloor.push(p);
+  }
+  belowFloor.sort((a, b) => b.tvl_usd - a.tvl_usd || compareCodeUnit(a.slug, b.slug));
+  for (let i = 0; i < Math.min(160, belowFloor.length); i++) selected.add(belowFloor[i]!.slug);
+  return selected;
+}
 
-  const belowFloor = snapshot.protocols
-    .filter((p) => isRankablePreToken(p) && p.tvl_usd < snapshot.floor_usd)
-    .sort((a, b) => b.tvl_usd - a.tvl_usd);
-  for (const p of belowFloor.slice(0, 160)) selected.add(p.slug);
+type BoardCandidate = Omit<BoardRow, 'rank' | 'verdict'>;
 
-  const candidates: Omit<BoardRow, 'rank' | 'verdict' | 'ev_per_hour'>[] = [];
+function buildBoardWithModel(snapshot: Snapshot, model: ValueModel, selectedSlugs?: ReadonlySet<string>): BoardRow[] {
+  const bySlug = new Map<string, Protocol>();
+  for (const p of snapshot.protocols) bySlug.set(p.slug, p);
+  const selected = selectedSlugs ?? defaultSweep(snapshot);
+  const candidates: BoardCandidate[] = [];
+
   for (const slug of selected) {
     const p = bySlug.get(slug);
     if (!p) continue;
     const baseRaw = model.predictBase(p.tvl_usd, p.category);
     const iv = impliedValue(p, snapshot.as_of, baseRaw);
     const plan = buildFarmPlan(p, iv.age);
-    const expected = iv.implied * 0.005;
+    const ev = (iv.implied * 0.005 - plan.gas_usd - plan.capital_drag_usd) / Math.max(0.01, plan.hours);
     candidates.push({
       slug: p.slug,
       name: p.name,
@@ -557,29 +584,33 @@ function buildBoardWithModel(snapshot: Snapshot, model: ValueModel): BoardRow[] 
       tvl_usd: p.tvl_usd,
       change_7d: p.change_7d,
       age_days: iv.age,
-      expected_airdrop_usd: roundTo(expected, 2),
+      expected_airdrop_usd: roundTo(iv.implied * 0.005, 2),
       gas_usd: plan.gas_usd,
       capital_drag_usd: plan.capital_drag_usd,
       farm_hours: plan.hours,
       growth_mult: iv.growthMult,
       age_mult: iv.ageMult,
       base_implied_usd: Math.round(iv.base),
-    } as any);
+      ev_per_hour: roundTo(ev, 4),
+    });
   }
 
-  candidates.sort((a, b) => b.implied_value_usd - a.implied_value_usd || a.slug.localeCompare(b.slug));
-  const evList = candidates.map((c) => (c.expected_airdrop_usd - c.gas_usd - c.capital_drag_usd) / Math.max(0.01, c.farm_hours));
-  const medEv = median(evList);
+  // Ranking is fully deterministic: implied value, then TVL, age and code-unit keys as
+  // secondary keys. localeCompare's locale-dependent collation cannot shuffle equal values.
+  candidates.sort((a, b) => b.implied_value_usd - a.implied_value_usd ||
+    b.tvl_usd - a.tvl_usd ||
+    (a.age_days ?? Number.MAX_SAFE_INTEGER) - (b.age_days ?? Number.MAX_SAFE_INTEGER) ||
+    compareCodeUnit(a.slug, b.slug) ||
+    compareCodeUnit(a.name, b.name) ||
+    compareCodeUnit(a.category ?? '', b.category ?? ''));
 
-  let rows: BoardRow[] = candidates.map((c, idx) => {
-    const ev = (c.expected_airdrop_usd - c.gas_usd - c.capital_drag_usd) / Math.max(0.01, c.farm_hours);
-    return {
-      ...(c as any),
-      rank: idx + 1,
-      ev_per_hour: roundTo(ev, 4),
-      verdict: verdictFor(ev, medEv),
-    };
-  });
+  const medEv = median(candidates.map((c) => c.ev_per_hour));
+  // Reuse the candidate objects as rows instead of spreading each one into a fresh object.
+  const rows = candidates as BoardRow[];
+  for (let i = 0; i < rows.length; i++) {
+    rows[i]!.rank = i + 1;
+    rows[i]!.verdict = verdictFor(rows[i]!.ev_per_hour, medEv);
+  }
 
   // Ensure implied never rises as rank ascends (rank 1 is highest).
   for (let i = 1; i < rows.length; i++) {
@@ -597,11 +628,14 @@ function buildBoardWithModel(snapshot: Snapshot, model: ValueModel): BoardRow[] 
   return rows;
 }
 
-// Build the ranked board: watchlist first requirement plus top 160 rankable pre-token below floor.
-export function buildBoard(snapshot: Snapshot): BoardRow[] {
-  const comps: CompPoint[] = snapshot.protocols.filter(isComparable).map((p) => ({ tvl: p.tvl_usd, mcap: p.mcap_usd as number, slug: p.slug, category: p.category }));
+// Build the ranked board: watchlist first requirement plus swept launch candidates below floor.
+export function buildBoard(snapshot: Snapshot, selectedSlugs?: ReadonlySet<string>): BoardRow[] {
+  const comps: CompPoint[] = [];
+  for (const p of snapshot.protocols) {
+    if (isComparable(p)) comps.push({ tvl: p.tvl_usd, mcap: p.mcap_usd as number, slug: p.slug, category: p.category });
+  }
   const model = chooseModel(comps);
-  return buildBoardWithModel(snapshot, model);
+  return buildBoardWithModel(snapshot, model, selectedSlugs);
 }
 
 // Validate a board against the required rules; return issue string or null if valid.
@@ -618,12 +652,21 @@ export function boardIssue(board: BoardRow[], snapshot: Snapshot): string | null
       return `implied value rises at rank ${board[i].rank}`;
     }
   }
-  const slugs = new Set(board.map((r) => r.slug));
+  const slugs = new Set<string>();
+  for (const r of board) {
+    if (slugs.has(r.slug)) return `duplicate board slug: ${r.slug}`;
+    slugs.add(r.slug);
+  }
   for (const w of snapshot.watchlist) {
     if (!slugs.has(w)) return `watchlist slug missing from board: ${w}`;
   }
   for (const r of board) {
     if (!Number.isInteger(r.implied_value_usd) || r.implied_value_usd <= 0) return `row ${r.slug} has non-positive whole implied_value_usd`;
+    if (!Number.isFinite(r.ev_per_hour) || !Number.isFinite(r.expected_airdrop_usd) ||
+        !Number.isFinite(r.gas_usd) || !Number.isFinite(r.capital_drag_usd) ||
+        !Number.isFinite(r.farm_hours) || r.farm_hours <= 0) {
+      return `row ${r.slug} has a non-finite value or non-positive farm hours`;
+    }
     if (!Array.isArray(r.farm_steps) || r.farm_steps.length < 3 || r.farm_steps.length > 12) {
       return `row ${r.slug} has invalid farm_steps count`;
     }
@@ -636,10 +679,16 @@ export function boardIssue(board: BoardRow[], snapshot: Snapshot): string | null
 }
 
 // Build the full radar payload for the dashboard, including the ranked board.
-export function buildRadar(snapshot: Snapshot): { board: BoardRow[]; radar: RadarPayload } {
-  const comps: CompPoint[] = snapshot.protocols.filter(isComparable).map((p) => ({ tvl: p.tvl_usd, mcap: p.mcap_usd as number, slug: p.slug, category: p.category }));
+export function buildRadar(snapshot: Snapshot, selectedSlugs?: ReadonlySet<string>): { board: BoardRow[]; radar: RadarPayload } {
+  // One pass collects both comparables and the slug->name index; no repeated .find() per comp.
+  const comps: CompPoint[] = [];
+  const nameBySlug = new Map<string, string>();
+  for (const p of snapshot.protocols) {
+    nameBySlug.set(p.slug, p.name);
+    if (isComparable(p)) comps.push({ tvl: p.tvl_usd, mcap: p.mcap_usd as number, slug: p.slug, category: p.category });
+  }
   const model = chooseModel(comps);
-  const board = buildBoardWithModel(snapshot, model);
+  const board = buildBoardWithModel(snapshot, model, selectedSlugs);
   const evs = board.map((r) => r.ev_per_hour);
   const medEv = median(evs);
   for (const r of board) {
@@ -648,7 +697,9 @@ export function buildRadar(snapshot: Snapshot): { board: BoardRow[]; radar: Rada
   const impliedVals = board.map((r) => r.implied_value_usd);
   const implied_min = Math.min(...impliedVals);
   const implied_max = Math.max(...impliedVals);
-  const watchCovered = snapshot.watchlist.filter((s) => board.some((r) => r.slug === s)).length;
+  const watchSet = new Set(snapshot.watchlist);
+  let watchCovered = 0;
+  for (const r of board) if (watchSet.has(r.slug)) watchCovered++;
   const looPct = roundTo(model.stats.loo_mape_median * 100, 2);
   const modeText = model.mode === 'category'
     ? 'per-category fits for categories with at least 12 live-token comparables, with smaller categories pooled'
@@ -677,7 +728,7 @@ export function buildRadar(snapshot: Snapshot): { board: BoardRow[]; radar: Rada
     implied_min,
     implied_max,
     median_ev_per_hour: roundTo(medEv, 4),
-    comps: comps.map((p) => ({ slug: p.slug, name: snapshot.protocols.find(pp=>pp.slug===p.slug)?.name || p.slug, category: p.category, tvl_usd: p.tvl, mcap_usd: p.mcap })),
+    comps: comps.map((p) => ({ slug: p.slug, name: nameBySlug.get(p.slug) || p.slug, category: p.category, tvl_usd: p.tvl, mcap_usd: p.mcap })),
     rows: board,
   };
   return { board, radar };
