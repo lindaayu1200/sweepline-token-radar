@@ -1,5 +1,9 @@
 // Token radar value model: estimates implied pre-token value from live comparables.
 // All scoring is formula-driven; no protocol slug or name gets special treatment.
+//
+// The numeric kernels (OLS, the median-residual screen and leave-one-out scoring) retain their
+// original evaluation order: summation order and rounding points are part of the model's output
+// and must not be "simplified". Clarity changes are in naming, structure and input guards.
 
 export interface Protocol {
   slug: string;
@@ -95,6 +99,14 @@ export interface RadarPayload {
   rows: BoardRow[];
 }
 
+const NULL_CATEGORY_KEY = '__null__';
+const POOLED_KEY = '__pooled__';
+const GLOBAL_KEY = '__global__';
+const MIN_CATEGORY_COMPS = 12;
+const MAX_SWEEP_CANDIDATES = 160;
+const MS_PER_DAY = 86_400_000;
+const MAX_DAY_CACHE = 10_000;
+
 function isFiniteNumber(x: unknown): x is number {
   return typeof x === 'number' && Number.isFinite(x);
 }
@@ -109,11 +121,13 @@ function compareCodeUnit(a: string, b: string): number {
 }
 
 // Parsing the same UTC day for hundreds of protocols is pure waste; cache by the date string.
+// The cap keeps long-lived callers from growing the cache without bound.
 const dayEpochCache = new Map<string, number>();
 function dayEpoch(day: string): number {
   let epoch = dayEpochCache.get(day);
   if (epoch === undefined) {
     epoch = Date.parse(day + 'T00:00:00Z');
+    if (dayEpochCache.size >= MAX_DAY_CACHE) dayEpochCache.clear();
     dayEpochCache.set(day, epoch);
   }
   return epoch;
@@ -150,7 +164,7 @@ function parseProtocol(raw: unknown, i: number): Protocol {
     slug: p.slug,
     name: p.name,
     category,
-    chains: p.chains as string[],
+    chains: (p.chains as string[]).slice(), // do not alias the parsed JSON array
     tvl_usd: p.tvl_usd,
     change_7d,
     mcap_usd,
@@ -162,6 +176,7 @@ function parseProtocol(raw: unknown, i: number): Protocol {
 
 // Parse and validate the snapshot JSON text; throws a clear Error on bad input.
 export function parseSnapshot(text: string): Snapshot {
+  if (!isString(text)) throw new Error('Invalid snapshot: not valid JSON');
   let data: unknown;
   try {
     data = JSON.parse(text);
@@ -183,7 +198,7 @@ export function parseSnapshot(text: string): Snapshot {
     source: o.source,
     floor_usd: o.floor_usd,
     protocols,
-    watchlist: o.watchlist as string[],
+    watchlist: (o.watchlist as string[]).slice(),
   };
 }
 
@@ -192,13 +207,14 @@ export function isPreToken(p: Protocol): boolean {
   return p.mcap_usd === null && p.gecko_id === null && p.symbol === null;
 }
 
-// Whole days between as_of and listed_at (UTC day difference); null when listed_at is null.
+// Whole days between as_of and listed_at (UTC day difference); null when listed_at is null
+// or either date cannot be parsed.
 export function ageDays(asOf: string, listedAt: string | null): number | null {
   if (listedAt === null) return null;
-  const a = dayEpoch(asOf);
-  const l = dayEpoch(listedAt);
-  if (!Number.isFinite(a) || !Number.isFinite(l)) return null;
-  const diff = Math.floor((a - l) / 86400000);
+  const asOfEpoch = dayEpoch(asOf);
+  const listedEpoch = dayEpoch(listedAt);
+  if (!Number.isFinite(asOfEpoch) || !Number.isFinite(listedEpoch)) return null;
+  const diff = Math.floor((asOfEpoch - listedEpoch) / MS_PER_DAY);
   return diff < 0 ? 0 : diff;
 }
 
@@ -207,7 +223,9 @@ function hasVersionMarker(name: string): boolean {
 }
 
 function isComparable(p: Protocol): boolean {
-  return p.mcap_usd !== null && p.mcap_usd > 0 && p.tvl_usd > 0 && p.category !== 'CEX' && !hasVersionMarker(p.name);
+  return p.mcap_usd !== null && Number.isFinite(p.mcap_usd) && p.mcap_usd > 0 &&
+    Number.isFinite(p.tvl_usd) && p.tvl_usd > 0 &&
+    p.category !== 'CEX' && !hasVersionMarker(p.name);
 }
 
 export function isRankablePreToken(p: Protocol): boolean {
@@ -221,10 +239,16 @@ interface Fit {
 
 interface Point { tvl: number; mcap: number; }
 
+// Guard used only to keep non-finite/non-positive points out of the numeric kernels below.
+function isValidPoint(pt: Point): boolean {
+  return isFiniteNumber(pt.tvl) && pt.tvl > 0 && isFiniteNumber(pt.mcap) && pt.mcap > 0;
+}
+
 // Ordinary least squares fit of log(mcap)=a+b*log(tvl). Returns null if fewer than 2 points.
+// The accumulation order is intentional and is preserved exactly.
 function ols(points: Point[]): Fit | null {
   const n = points.length;
-  if (n < 2) return null;
+  if (n < 2 || !points.every(isValidPoint)) return null;
   let sx = 0, sy = 0, sxx = 0, sxy = 0;
   for (const pt of points) {
     const x = Math.log(pt.tvl);
@@ -239,7 +263,9 @@ function ols(points: Point[]): Fit | null {
 }
 
 function predict(fit: Fit, tvl: number): number {
-  return Math.exp(fit.a + fit.b * Math.log(Math.max(1, tvl)));
+  if (!isFiniteNumber(fit.a) || !isFiniteNumber(fit.b)) return 1;
+  const safeTvl = isFiniteNumber(tvl) ? tvl : 1;
+  return Math.exp(fit.a + fit.b * Math.log(Math.max(1, safeTvl)));
 }
 
 function r2For(points: Point[], fit: Fit): number {
@@ -256,14 +282,15 @@ function r2For(points: Point[], fit: Fit): number {
     ssTot += dy * dy;
     ssRes += dr * dr;
   }
-  return ssTot <= 0 ? 1 : 1 - ssRes / ssTot;
+  const r2 = ssTot <= 0 ? 1 : 1 - ssRes / ssTot;
+  return Number.isFinite(r2) ? r2 : 0;
 }
 
 function median(values: number[]): number {
   if (values.length === 0) return 0;
-  const s = [...values].sort((x, y) => x - y);
-  const mid = Math.floor(s.length / 2);
-  return s.length % 2 === 1 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+  const sorted = [...values].sort((x, y) => x - y);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 1 ? sorted[mid]! : (sorted[mid - 1]! + sorted[mid]!) / 2;
 }
 
 function clamp(v: number, lo: number, hi: number): number {
@@ -279,30 +306,41 @@ function roundTo(n: number, digits: number): number {
 function robustFit(points: Point[]): { fit: Fit; kept: Point[]; dropped: number } {
   const fit1 = ols(points);
   if (!fit1 || points.length < 3) {
-    const f = fit1 || { a: 0, b: 0 };
-    return { fit: f, kept: points, dropped: 0 };
+    return { fit: fit1 || { a: 0, b: 0 }, kept: points, dropped: 0 };
   }
-  const absRes = points.map((pt) => Math.abs(Math.log(pt.mcap) - (fit1.a + fit1.b * Math.log(pt.tvl))));
+  const residual = (pt: Point): number =>
+    Math.abs(Math.log(pt.mcap) - (fit1.a + fit1.b * Math.log(pt.tvl)));
+  const absRes = points.map(residual);
   const mad = median(absRes);
   if (mad <= 0) return { fit: fit1, kept: points, dropped: 0 };
   const threshold = mad * 3;
-  const filtered = points.filter((pt) => Math.abs(Math.log(pt.mcap) - (fit1.a + fit1.b * Math.log(pt.tvl))) <= threshold);
+  const filtered = points.filter((pt) => residual(pt) <= threshold);
   const kept = filtered.length >= 2 ? filtered : points;
   const fit2 = ols(kept) || fit1;
   return { fit: fit2, kept, dropped: points.length - kept.length };
 }
 
-function looForPoints(points: Point[]): number {
-  const apes: number[] = [];
+// Leave-one-out errors are appended to one shared array so the median spans every comparable
+// (across all groups when a category model is used), in exactly the original order.
+function collectLooApes(points: Point[], apes: number[]): void {
   for (let i = 0; i < points.length; i++) {
     const train = points.filter((_, j) => j !== i);
     if (train.length < 2) continue;
     const { fit } = robustFit(train);
-    const pred = predict(fit, points[i].tvl);
-    const actual = points[i].mcap;
+    const pred = predict(fit, points[i]!.tvl);
+    const actual = points[i]!.mcap;
     if (actual > 0) apes.push(Math.abs(pred - actual) / actual);
   }
+}
+
+function medianApe(apes: number[]): number {
   return apes.length ? median(apes) : 0;
+}
+
+function looForPoints(points: Point[]): number {
+  const apes: number[] = [];
+  collectLooApes(points, apes);
+  return medianApe(apes);
 }
 
 interface CompPoint extends Point { slug: string; category: string | null; }
@@ -317,18 +355,23 @@ interface ValueModel {
 function buildGroups(comps: CompPoint[]): GroupFit[] {
   const byCat = new Map<string, CompPoint[]>();
   for (const c of comps) {
-    const key = c.category === null ? '__null__' : c.category;
-    if (!byCat.has(key)) byCat.set(key, []);
-    byCat.get(key)!.push(c);
+    const key = c.category === null ? NULL_CATEGORY_KEY : c.category;
+    let bucket = byCat.get(key);
+    if (!bucket) {
+      bucket = [];
+      byCat.set(key, bucket);
+    }
+    bucket.push(c);
   }
   const bigKeys = new Set<string>();
-  for (const [key, arr] of byCat) if (arr.length >= 12) bigKeys.add(key);
+  for (const [key, arr] of byCat) if (arr.length >= MIN_CATEGORY_COMPS) bigKeys.add(key);
+
   const groups: GroupFit[] = [];
   const pooled: CompPoint[] = [];
   for (const [key, arr] of byCat) {
     if (bigKeys.has(key)) {
       const { fit, kept, dropped } = robustFit(arr);
-      const label = key === '__null__' ? 'Unknown' : key;
+      const label = key === NULL_CATEGORY_KEY ? 'Unknown' : key;
       groups.push({ key, label, comps: arr, fit, kept, dropped });
     } else {
       pooled.push(...arr);
@@ -336,16 +379,16 @@ function buildGroups(comps: CompPoint[]): GroupFit[] {
   }
   if (pooled.length >= 2) {
     const { fit, kept, dropped } = robustFit(pooled);
-    groups.push({ key: '__pooled__', label: 'Pooled (small categories)', comps: pooled, fit, kept, dropped });
+    groups.push({ key: POOLED_KEY, label: 'Pooled (small categories)', comps: pooled, fit, kept, dropped });
   }
   return groups;
 }
 
 function groupForCategory(category: string | null, groups: GroupFit[]): GroupFit | null {
-  const key = category === null ? '__null__' : category;
+  const key = category === null ? NULL_CATEGORY_KEY : category;
   const direct = groups.find((g) => g.key === key);
   if (direct) return direct;
-  return groups.find((g) => g.key === '__pooled__') || groups[0] || null;
+  return groups.find((g) => g.key === POOLED_KEY) || groups[0] || null;
 }
 
 function overallR2ForGroups(groups: GroupFit[]): number {
@@ -359,22 +402,14 @@ function overallR2ForGroups(groups: GroupFit[]): number {
   const meanY = sy / all.length;
   let ssTot = 0, ssRes = 0;
   for (const p of all) { const dy = p.y - meanY; const dr = p.y - p.yhat; ssTot += dy * dy; ssRes += dr * dr; }
-  return ssTot <= 0 ? 1 : 1 - ssRes / ssTot;
+  const r2 = ssTot <= 0 ? 1 : 1 - ssRes / ssTot;
+  return Number.isFinite(r2) ? r2 : 0;
 }
 
 function overallLooForGroups(groups: GroupFit[]): number {
   const apes: number[] = [];
-  for (const g of groups) {
-    for (let i = 0; i < g.comps.length; i++) {
-      const train = g.comps.filter((_, j) => j !== i);
-      if (train.length < 2) continue;
-      const { fit } = robustFit(train);
-      const pred = predict(fit, g.comps[i].tvl);
-      const actual = g.comps[i].mcap;
-      if (actual > 0) apes.push(Math.abs(pred - actual) / actual);
-    }
-  }
-  return apes.length ? median(apes) : 0;
+  for (const g of groups) collectLooApes(g.comps, apes);
+  return medianApe(apes);
 }
 
 function fitInfos(groups: GroupFit[]): FitInfo[] {
@@ -393,31 +428,40 @@ function buildGlobalModel(comps: CompPoint[]): ValueModel {
   const { fit, kept, dropped } = robustFit(comps);
   const r2 = r2For(kept, fit);
   const loo = looForPoints(comps);
-  const info: FitInfo = { key: '__global__', label: 'Global', n: kept.length, a: fit.a, b: roundTo(fit.b, 6), r2: roundTo(r2, 6), dropped };
+  const info: FitInfo = {
+    key: GLOBAL_KEY, label: 'Global', n: kept.length,
+    a: fit.a, b: roundTo(fit.b, 6), r2: roundTo(r2, 6), dropped,
+  };
   return {
     mode: 'global',
     predictBase: (tvl) => predict(fit, tvl),
-    stats: { n: kept.length, r2: roundTo(r2, 6), dropped, loo_mape_median: roundTo(loo, 6), fits: [info], mode: 'global', fallback_note: null },
+    stats: {
+      n: kept.length, r2: roundTo(r2, 6), dropped,
+      loo_mape_median: roundTo(loo, 6), fits: [info], mode: 'global', fallback_note: null,
+    },
   };
 }
 
 function buildCategoryModel(comps: CompPoint[]): ValueModel | null {
   const groups = buildGroups(comps);
   if (groups.length === 0) return null;
-  const hasCategoryFit = groups.some((g) => g.key !== '__pooled__');
+  const hasCategoryFit = groups.some((g) => g.key !== POOLED_KEY);
   if (!hasCategoryFit) return null; // no category had >=12, equivalent to global
   const r2 = overallR2ForGroups(groups);
   const loo = overallLooForGroups(groups);
   const totalKept = groups.reduce((s, g) => s + g.kept.length, 0);
   const totalDropped = groups.reduce((s, g) => s + g.dropped, 0);
+  const anyGroup = groups[0]!;
   return {
     mode: 'category',
     predictBase: (tvl, category) => {
       const g = groupForCategory(category, groups);
-      if (!g) return predict(groups[0].fit, tvl);
-      return predict(g.fit, tvl);
+      return predict(g ? g.fit : anyGroup.fit, tvl);
     },
-    stats: { n: totalKept, r2: roundTo(r2, 6), dropped: totalDropped, loo_mape_median: roundTo(loo, 6), fits: fitInfos(groups), mode: 'category', fallback_note: null },
+    stats: {
+      n: totalKept, r2: roundTo(r2, 6), dropped: totalDropped,
+      loo_mape_median: roundTo(loo, 6), fits: fitInfos(groups), mode: 'category', fallback_note: null,
+    },
   };
 }
 
@@ -530,13 +574,16 @@ function buildFarmPlan(p: Protocol, age: number | null): FarmPlan {
 }
 
 function impliedValue(p: Protocol, asOf: string, baseRaw: number): { implied: number; base: number; growthMult: number; ageMult: number; age: number | null } {
-  const growth = clamp(p.change_7d === null ? 0 : p.change_7d, -40, 80);
+  // A broken base prediction degrades to the $1 floor rather than poisoning the whole board.
+  const base = Number.isFinite(baseRaw) && baseRaw > 0 ? baseRaw : 1;
+  const rawGrowth = p.change_7d === null || !Number.isFinite(p.change_7d) ? 0 : p.change_7d;
+  const growth = clamp(rawGrowth, -40, 80);
   const growthMult = 1 + (growth / 100) * 0.6;
   const age = ageDays(asOf, p.listed_at);
   const ageForMult = age === null ? 365 : age;
   const ageMult = 0.7 + Math.min(ageForMult, 1095) / 1095 * 0.3;
-  const implied = Math.max(1, Math.min(1e14, Math.round(baseRaw * growthMult * ageMult)));
-  return { implied, base: baseRaw, growthMult: roundTo(growthMult, 6), ageMult: roundTo(ageMult, 6), age };
+  const implied = Math.max(1, Math.min(1e14, Math.round(base * growthMult * ageMult)));
+  return { implied, base, growthMult: roundTo(growthMult, 6), ageMult: roundTo(ageMult, 6), age };
 }
 
 function verdictFor(evPerHour: number, medianEv: number): 'farm' | 'thin' | 'skip' {
@@ -555,8 +602,20 @@ function defaultSweep(snapshot: Snapshot): Set<string> {
     if (isRankablePreToken(p) && p.tvl_usd < snapshot.floor_usd) belowFloor.push(p);
   }
   belowFloor.sort((a, b) => b.tvl_usd - a.tvl_usd || compareCodeUnit(a.slug, b.slug));
-  for (let i = 0; i < Math.min(160, belowFloor.length); i++) selected.add(belowFloor[i]!.slug);
+  for (let i = 0; i < Math.min(MAX_SWEEP_CANDIDATES, belowFloor.length); i++) selected.add(belowFloor[i]!.slug);
   return selected;
+}
+
+// One pass over the snapshot collects comparables in protocol order and the slug->name index,
+// avoiding a repeated .find() for every comparable.
+function collectComparables(snapshot: Snapshot): { comps: CompPoint[]; nameBySlug: Map<string, string> } {
+  const comps: CompPoint[] = [];
+  const nameBySlug = new Map<string, string>();
+  for (const p of snapshot.protocols) {
+    nameBySlug.set(p.slug, p.name);
+    if (isComparable(p)) comps.push({ tvl: p.tvl_usd, mcap: p.mcap_usd as number, slug: p.slug, category: p.category });
+  }
+  return { comps, nameBySlug };
 }
 
 type BoardCandidate = Omit<BoardRow, 'rank' | 'verdict'>;
@@ -574,6 +633,7 @@ function buildBoardWithModel(snapshot: Snapshot, model: ValueModel, selectedSlug
     const iv = impliedValue(p, snapshot.as_of, baseRaw);
     const plan = buildFarmPlan(p, iv.age);
     const ev = (iv.implied * 0.005 - plan.gas_usd - plan.capital_drag_usd) / Math.max(0.01, plan.hours);
+    // Key insertion order here is also the JSON key order of each board.json row; keep it stable.
     candidates.push({
       slug: p.slug,
       name: p.name,
@@ -605,7 +665,8 @@ function buildBoardWithModel(snapshot: Snapshot, model: ValueModel, selectedSlug
     compareCodeUnit(a.category ?? '', b.category ?? ''));
 
   const medEv = median(candidates.map((c) => c.ev_per_hour));
-  // Reuse the candidate objects as rows instead of spreading each one into a fresh object.
+  // Reuse the candidate objects as rows instead of spreading each one into a fresh object, so
+  // rank and verdict are appended last and the serialized row key order stays unchanged.
   const rows = candidates as BoardRow[];
   for (let i = 0; i < rows.length; i++) {
     rows[i]!.rank = i + 1;
@@ -614,8 +675,8 @@ function buildBoardWithModel(snapshot: Snapshot, model: ValueModel, selectedSlug
 
   // Ensure implied never rises as rank ascends (rank 1 is highest).
   for (let i = 1; i < rows.length; i++) {
-    if (rows[i].implied_value_usd > rows[i - 1].implied_value_usd) {
-      rows[i].implied_value_usd = rows[i - 1].implied_value_usd;
+    if (rows[i]!.implied_value_usd > rows[i - 1]!.implied_value_usd) {
+      rows[i]!.implied_value_usd = rows[i - 1]!.implied_value_usd;
     }
   }
   // Recompute expected airdrop and EV if implied was adjusted to keep values consistent.
@@ -630,10 +691,7 @@ function buildBoardWithModel(snapshot: Snapshot, model: ValueModel, selectedSlug
 
 // Build the ranked board: watchlist first requirement plus swept launch candidates below floor.
 export function buildBoard(snapshot: Snapshot, selectedSlugs?: ReadonlySet<string>): BoardRow[] {
-  const comps: CompPoint[] = [];
-  for (const p of snapshot.protocols) {
-    if (isComparable(p)) comps.push({ tvl: p.tvl_usd, mcap: p.mcap_usd as number, slug: p.slug, category: p.category });
-  }
+  const { comps } = collectComparables(snapshot);
   const model = chooseModel(comps);
   return buildBoardWithModel(snapshot, model, selectedSlugs);
 }
@@ -643,13 +701,13 @@ export function boardIssue(board: BoardRow[], snapshot: Snapshot): string | null
   if (!Array.isArray(board) || board.length < 1) return 'board must be a non-empty array';
   const ranks = board.map((r) => r.rank);
   for (let i = 0; i < board.length; i++) {
-    if (board[i].rank !== i + 1) return `rank gap or mismatch at index ${i}: expected ${i + 1} got ${board[i].rank}`;
+    if (board[i]!.rank !== i + 1) return `rank gap or mismatch at index ${i}: expected ${i + 1} got ${board[i]!.rank}`;
   }
   const seenRanks = new Set(ranks);
   if (seenRanks.size !== board.length) return 'duplicate ranks found';
   for (let i = 1; i < board.length; i++) {
-    if (board[i].implied_value_usd > board[i - 1].implied_value_usd) {
-      return `implied value rises at rank ${board[i].rank}`;
+    if (board[i]!.implied_value_usd > board[i - 1]!.implied_value_usd) {
+      return `implied value rises at rank ${board[i]!.rank}`;
     }
   }
   const slugs = new Set<string>();
@@ -680,13 +738,7 @@ export function boardIssue(board: BoardRow[], snapshot: Snapshot): string | null
 
 // Build the full radar payload for the dashboard, including the ranked board.
 export function buildRadar(snapshot: Snapshot, selectedSlugs?: ReadonlySet<string>): { board: BoardRow[]; radar: RadarPayload } {
-  // One pass collects both comparables and the slug->name index; no repeated .find() per comp.
-  const comps: CompPoint[] = [];
-  const nameBySlug = new Map<string, string>();
-  for (const p of snapshot.protocols) {
-    nameBySlug.set(p.slug, p.name);
-    if (isComparable(p)) comps.push({ tvl: p.tvl_usd, mcap: p.mcap_usd as number, slug: p.slug, category: p.category });
-  }
+  const { comps, nameBySlug } = collectComparables(snapshot);
   const model = chooseModel(comps);
   const board = buildBoardWithModel(snapshot, model, selectedSlugs);
   const evs = board.map((r) => r.ev_per_hour);
@@ -694,9 +746,18 @@ export function buildRadar(snapshot: Snapshot, selectedSlugs?: ReadonlySet<strin
   for (const r of board) {
     r.verdict = verdictFor(r.ev_per_hour, medEv);
   }
-  const impliedVals = board.map((r) => r.implied_value_usd);
-  const implied_min = Math.min(...impliedVals);
-  const implied_max = Math.max(...impliedVals);
+
+  // An explicit min/max loop avoids Math.min(...values) blowing the argument limit on a large
+  // board, and yields the same numbers for the sealed snapshot.
+  let implied_min = Infinity;
+  let implied_max = -Infinity;
+  for (const r of board) {
+    if (r.implied_value_usd < implied_min) implied_min = r.implied_value_usd;
+    if (r.implied_value_usd > implied_max) implied_max = r.implied_value_usd;
+  }
+  if (!Number.isFinite(implied_min)) implied_min = 0;
+  if (!Number.isFinite(implied_max)) implied_max = 0;
+
   const watchSet = new Set(snapshot.watchlist);
   let watchCovered = 0;
   for (const r of board) if (watchSet.has(r.slug)) watchCovered++;
