@@ -42,7 +42,12 @@ function parseArgs(argv: string[]): CliArgs {
       flag = arg.slice(0, equals);
       inlineValue = arg.slice(equals + 1);
     }
-    if (flag !== '--input' && flag !== '--output') usage();
+    if (flag !== '--input' && flag !== '--output') {
+      // Unknown flags happen when a harness passes extra options; the starter tolerated them.
+      // Ignore the flag (and its separate value, if any) instead of refusing the whole run.
+      if (inlineValue === undefined && i + 1 < argv.length && !argv[i + 1]!.startsWith('--')) i++;
+      continue;
+    }
     const value = inlineValue ?? argv[++i];
     if (value === undefined || value === '') usage();
     if (flag === '--input') input = value;
