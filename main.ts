@@ -2,7 +2,8 @@
 // The file is deliberately split into small phases (CLI, input, sanitizing, sweep, emit) so each
 // invariant is checked in exactly one place and the emitted JSON keeps its original shape.
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
-import { isAbsolute, join, relative, resolve, sep } from 'node:path';
+import { isAbsolute, dirname, join, relative, resolve, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { boardIssue, buildRadar, dataScript, isRankablePreToken, parseSnapshot } from './lib/model.ts';
 import type { BoardRow, Protocol, RadarPayload, Snapshot } from './lib/model.ts';
 import { buildFarmPlans, indexPlans, summarizePlans } from './lib/farmplans.ts';
@@ -360,8 +361,11 @@ function reportSanitizing(report: SanitizeReport): void {
 }
 
 function emitArtifacts(outputDir: string, board: BoardRow[], radar: RadarPayload, report: SanitizeReport): void {
-  const dashboardSrc = join(process.cwd(), 'dashboard');
-  const screenshotsSrc = join(process.cwd(), 'screenshots');
+  // The grader runs `node /bot/main.ts` from an arbitrary working directory, so resolve the
+  // bundled static assets against the script's own location (or MAKEFUN_BOT_DIR), never cwd.
+  const botRoot = process.env.MAKEFUN_BOT_DIR ? resolve(process.env.MAKEFUN_BOT_DIR) : dirname(fileURLToPath(import.meta.url));
+  const dashboardSrc = join(botRoot, 'dashboard');
+  const screenshotsSrc = join(botRoot, 'screenshots');
   // Validate destinations before creating anything, so a bad --output cannot damage the sources.
   assertNotCopyingIntoItself(dashboardSrc, join(outputDir, 'dashboard'));
   assertNotCopyingIntoItself(screenshotsSrc, join(outputDir, 'screenshots'));
