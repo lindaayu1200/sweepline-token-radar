@@ -5,6 +5,8 @@
 // original evaluation order: summation order and rounding points are part of the model's output
 // and must not be "simplified". Clarity changes are in naming, structure and input guards.
 
+import type { FarmPlanDetail, FarmPlanSummary } from './farmplans.ts';
+
 export interface Protocol {
   slug: string;
   name: string;
@@ -55,6 +57,7 @@ export interface BoardRow {
   growth_mult: number;
   age_mult: number;
   base_implied_usd: number;
+  farm?: FarmPlanDetail;
 }
 
 export interface FitInfo {
@@ -97,6 +100,7 @@ export interface RadarPayload {
   median_ev_per_hour: number;
   comps: { slug: string; name: string; category: string | null; tvl_usd: number; mcap_usd: number }[];
   rows: BoardRow[];
+  farmSummary?: FarmPlanSummary;
 }
 
 const NULL_CATEGORY_KEY = '__null__';

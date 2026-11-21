@@ -5,6 +5,7 @@ import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSyn
 import { isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { boardIssue, buildRadar, dataScript, isRankablePreToken, parseSnapshot } from './lib/model.ts';
 import type { BoardRow, Protocol, RadarPayload, Snapshot } from './lib/model.ts';
+import { buildFarmPlans, indexPlans, summarizePlans } from './lib/farmplans.ts';
 import { buildDossier } from './vendor/makefun-board.ts';
 
 const DEFAULT_INPUT = '/input/snapshot.json';
@@ -395,6 +396,18 @@ function main(): void {
 
   const selected = sweepLaunchCandidates(snapshot);
   const { board, radar } = buildRadar(snapshot, selected);
+
+  // Plans are derived after ranking, so each row already carries its final verdict and EV.
+  // radar.rows aliases board, so one assignment fills both board.json and the data.js payload.
+  const farmPlans = buildFarmPlans(snapshot, board);
+  const farmBySlug = indexPlans(farmPlans);
+  for (const row of board) {
+    const plan = farmBySlug.get(row.slug);
+    // Cheap insurance if the index is ever built from a different set of rows.
+    if (plan && plan.slug === row.slug) row.farm = plan;
+  }
+  radar.farmSummary = summarizePlans(farmPlans);
+
   const issue = boardIssue(board, snapshot);
   if (issue) throw new Error(`Refusing board: ${issue}`);
 
