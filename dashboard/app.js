@@ -1,224 +1,395 @@
 (function(){
-  const R = window.RADAR;
-  if(!R){ document.body.textContent='Radar data missing.'; return; }
-  const $ = (s)=>document.querySelector(s);
-  const fmtUsd = (n)=>'$'+Math.round(n).toLocaleString('en-US');
-  const fmtNum = (n,d=2)=> (n==null?'n/a':Number(n).toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:d}));
-  const fmtCompact = (n)=>{
-    if(n==null) return 'n/a';
-    const a=Math.abs(n);
-    if(a>=1e9) return (n/1e9).toFixed(2)+'B';
-    if(a>=1e6) return (n/1e6).toFixed(2)+'M';
-    if(a>=1e3) return (n/1e3).toFixed(1)+'K';
-    return String(Math.round(n));
-  };
-  const esc = (s)=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  'use strict';
+  var P = window.RADAR;
+  var byId = function(id){ return document.getElementById(id); };
+  if(!P || !Array.isArray(P.rows)){
+    byId('resultcount').textContent = 'Payload unavailable - run the entry first.';
+    return;
+  }
 
-  function renderStats(){
-    const m = R.model;
-    const items = [
-      ['Watchlist', `${R.watchlist_covered}/${R.watchlist_total}`],
-      ['Board rows', R.board_rows],
-      ['Comps n', m.n],
-      ['r2', fmtNum(m.r2,4)],
-      ['LOO MAPE', fmtNum(m.loo_mape_median*100,2)+'%'],
-      ['Fits', m.fits ? m.fits.length : 1],
-      ['Implied range', `${fmtCompact(R.implied_min)} - ${fmtCompact(R.implied_max)}`],
-      ['As of', R.as_of]
+  var rows = P.rows.slice();
+  var totalRows = rows.length;
+  var bySlug = new Map();
+  rows.forEach(function(r){ bySlug.set(r.slug, r); });
+  var summary = P.farmSummary || { tiers:{ low:0, medium:0, high:0 } };
+  var NULL_CAT = '__null__';
+  var effortOrder = { low:0, medium:1, high:2 };
+  var sortDefault = { rank:1, tvl:-1, change:-1, ev:-1, implied:-1, effort:-1 };
+  var state = { q:'', category:'', chain:'', verdict:'all', effort:'all', slider:0, sort:'rank', dir:1 };
+  var shownRows = [];
+  var cursor = -1;
+  var focusBeforeDrawer = null;
+
+  var searchEl = byId('search');
+  var drawer = byId('drawer');
+  var bodyEl = byId('board-body');
+
+  // Revision 2: normalize each record once, then reuse the derived values on every keystroke.
+  var peakTvl = rows.reduce(function(m, r){ return Math.max(m, finite(r.tvl_usd) ? r.tvl_usd : 0); }, 1);
+  var minTvlByStep = [];
+  for(var step = 0; step <= 100; step++){
+    minTvlByStep[step] = step === 0 ? 0 : Math.pow(10, step / 100 * Math.log10(peakTvl + 1)) - 1;
+  }
+  var prepared = rows.map(function(r){
+    var chains = Array.isArray(r.chains) ? r.chains.map(String) : [];
+    return {
+      row:r,
+      hay:(String(r.name || '') + ' ' + String(r.slug || '')).toLowerCase(),
+      cat:catKey(r),
+      chains:chains,
+      rank:finite(r.rank) ? r.rank : 0,
+      tvl:finite(r.tvl_usd) ? r.tvl_usd : null,
+      chg:finite(r.change_7d) ? r.change_7d : null,
+      ev:finite(r.ev_per_hour) ? r.ev_per_hour : null,
+      implied:finite(r.implied_value_usd) ? r.implied_value_usd : null,
+      tier:effortOf(r)
+    };
+  });
+  var pipelineCache = { key:null, list:[] };
+
+  function esc(value){
+    return String(value == null ? '' : value).replace(/[&<>"']/g, function(c){
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+  function finite(value){
+    return typeof value === 'number' && isFinite(value);
+  }
+  function money(value){
+    return finite(value) ? '$' + value.toLocaleString('en-US', { maximumFractionDigits:0 }) : 'n/a';
+  }
+  function compact(value){
+    if(!finite(value)) return 'n/a';
+    var a = Math.abs(value);
+    if(a >= 1e9) return '$' + (value / 1e9).toFixed(2) + 'B';
+    if(a >= 1e6) return '$' + (value / 1e6).toFixed(2) + 'M';
+    if(a >= 1e3) return '$' + (value / 1e3).toFixed(1) + 'K';
+    return '$' + Math.round(value);
+  }
+  function decimal(value, places){
+    return finite(value) ? value.toLocaleString('en-US', { minimumFractionDigits:places, maximumFractionDigits:places }) : 'n/a';
+  }
+  function changeText(value){
+    if(!finite(value)) return 'n/a';
+    return (value > 0 ? '+' : '') + value.toFixed(2) + '%';
+  }
+  function catLabel(row){
+    var text = row.category == null ? '' : String(row.category).trim();
+    return text === '' ? 'Unclassified' : text;
+  }
+  function catKey(row){
+    var text = row.category == null ? '' : String(row.category).trim();
+    return text === '' ? NULL_CAT : text;
+  }
+  function effortOf(row){
+    var tier = row.farm && row.farm.effort ? String(row.farm.effort) : '';
+    return effortOrder[tier] === undefined ? null : tier;
+  }
+  function threshold(){
+    return minTvlByStep[state.slider] || 0;
+  }
+
+  function renderKpis(count){
+    var t = summary.tiers || {};
+    var top = rows.reduce(function(m, r){ return Math.max(m, finite(r.implied_value_usd) ? r.implied_value_usd : 0); }, 0);
+    var items = [
+      { label:'Protocols priced', value:String(totalRows), sub:'ranked universe' },
+      { label:'Watchlist covered', value:(P.watchlist_covered || 0) + '/' + (P.watchlist_total || 0), sub:'named mandates' },
+      { label:'Rows shown', value:String(count), sub:'of ' + totalRows + ' after filters', cls:'accent' },
+      { label:'Top implied value', value:compact(top), sub:'rank one estimate' },
+      { label:'Median EV / hour', value:finite(P.median_ev_per_hour) ? '$' + decimal(P.median_ev_per_hour, 2) : 'n/a', sub:'board benchmark' },
+      { label:'Farm effort tiers', value:'<span class="lo">' + (t.low || 0) + '</span> / <span class="mid">' + (t.medium || 0) + '</span> / <span class="hi">' + (t.high || 0) + '</span>', sub:'low / medium / high' }
     ];
-    $('#stats').innerHTML = items.map(([k,v])=>`<div class="stat"><div>${esc(k)}</div><b>${esc(String(v))}</b></div>`).join('');
-  }
-
-  function renderModel(){
-    const m = R.model;
-    const fitDesc = (m.fits||[]).map(f=>`${f.label}: n=${f.n}, r2=${fmtNum(f.r2,4)}, LOO shown overall, b=${fmtNum(f.b,4)}, a=${fmtNum(f.a,4)}, dropped=${f.dropped}`).join(' | ');
-    let formula = m.formula + ` Fits used: ${fitDesc}.`;
-    if(m.fallback_note) formula += ' ' + m.fallback_note;
-    $('#formula').textContent = formula;
-    $('#constants').textContent = m.constants;
-    $('#loo').textContent = m.loo_sentence;
-    $('#assumption').textContent = m.ev_sentence || `Expected airdrop assumes a ${(m.allocation*100).toFixed(2)}% token allocation of implied fully diluted value; the airdrop itself is a stated 0.50% assumption, not a forecast.`;
-    $('#verdict-rule').textContent = m.verdict_rule || `Verdict rule: compute EV per active hour = (expected_airdrop - gas - capital_drag) / hours for each row.`;
-  }
-
-  function renderChart(){
-    const W=760,H=440,pad={l:55,r:20,t:20,b:45};
-    const rows = R.rows;
-    const comps = R.comps;
-    const ptsB = rows.map(r=>({x:Math.log10(Math.max(1,r.tvl_usd)), y:Math.log10(Math.max(1,r.implied_value_usd))}));
-    const ptsC = comps.map(c=>({x:Math.log10(Math.max(1,c.tvl_usd)), y:Math.log10(Math.max(1,c.mcap_usd))}));
-    const all = ptsB.concat(ptsC);
-    const minX=Math.min(...all.map(p=>p.x)), maxX=Math.max(...all.map(p=>p.x));
-    const minY=Math.min(...all.map(p=>p.y)), maxY=Math.max(...all.map(p=>p.y));
-    const sx=(x)=>pad.l + (x-minX)/(maxX-minX||1)*(W-pad.l-pad.r);
-    const sy=(y)=>H-pad.b - (y-minY)/(maxY-minY||1)*(H-pad.t-pad.b);
-    const grid=[];
-    for(let i=Math.ceil(minX); i<=Math.floor(maxX); i++){
-      const x=sx(i); grid.push(`<line x1="${x}" y1="${pad.t}" x2="${x}" y2="${H-pad.b}" stroke="#0d4a44" stroke-width="1"/>`);
-      grid.push(`<text x="${x}" y="${H-pad.b+16}" fill="#7fa9a2" font-size="10" text-anchor="middle">${i}</text>`);
-    }
-    for(let i=Math.ceil(minY); i<=Math.floor(maxY); i++){
-      const y=sy(i); grid.push(`<line x1="${pad.l}" y1="${y}" x2="${W-pad.r}" y2="${y}" stroke="#0d4a44" stroke-width="1"/>`);
-      grid.push(`<text x="${pad.l-6}" y="${y+3}" fill="#7fa9a2" font-size="10" text-anchor="end">${i}</text>`);
-    }
-    const x1=minX, x2=maxX;
-    const fits = (R.model && R.model.fits && R.model.fits.length) ? R.model.fits : (R.fit ? [{a:R.fit.a,b:R.fit.b,label:'Fitted line'}] : []);
-    const fitLines = fits.map(f=>{
-      const y1=(f.a + f.b*(x1*Math.LN10))/Math.LN10;
-      const y2=(f.a + f.b*(x2*Math.LN10))/Math.LN10;
-      return `<line x1="${sx(x1)}" y1="${sy(y1)}" x2="${sx(x2)}" y2="${sy(y2)}" stroke="#d8efe9" stroke-width="1.2" opacity="0.85"/>`;
+    byId('kpis').innerHTML = items.map(function(item){
+      return '<div class="kpi"><span class="kpi-label">' + esc(item.label) + '</span>' +
+        '<span class="kpi-value' + (item.cls ? ' ' + item.cls : '') + '">' + item.value + '</span>' +
+        '<span class="kpi-sub">' + esc(item.sub) + '</span></div>';
     }).join('');
-    const dotsB = ptsB.map(p=>`<circle cx="${sx(p.x).toFixed(2)}" cy="${sy(p.y).toFixed(2)}" r="1.8" fill="#3ddc97" opacity="0.28"/>`).join('');
-    const dotsC = ptsC.map(p=>`<circle cx="${sx(p.x).toFixed(2)}" cy="${sy(p.y).toFixed(2)}" r="2.4" fill="#f2a33c" opacity="0.85"/>`).join('');
-    const lineLabel = fits.length > 1 ? 'Fitted lines' : 'Fitted line';
-    const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter chart">
-      ${grid.join('')}
-      <line x1="${pad.l}" y1="${H-pad.b}" x2="${W-pad.r}" y2="${H-pad.b}" stroke="#7fa9a2"/>
-      <line x1="${pad.l}" y1="${pad.t}" x2="${pad.l}" y2="${H-pad.b}" stroke="#7fa9a2"/>
-      ${dotsB}${dotsC}${fitLines}
-      <text x="${W/2}" y="${H-8}" fill="#d8efe9" font-size="11" text-anchor="middle">log10 TVL (USD)</text>
-      <text x="14" y="${H/2}" fill="#d8efe9" font-size="11" text-anchor="middle" transform="rotate(-90 14 ${H/2})">log10 implied/mcap (USD)</text>
-      <circle cx="${W-190}" cy="18" r="3.5" fill="#3ddc97" opacity="0.6"/><text x="${W-180}" y="22" fill="#d8efe9" font-size="11">Board pre-token (all)</text>
-      <circle cx="${W-190}" cy="36" r="3.5" fill="#f2a33c"/><text x="${W-180}" y="40" fill="#d8efe9" font-size="11">Live comps</text>
-      <line x1="${W-194}" y1="54" x2="${W-186}" y2="54" stroke="#d8efe9" stroke-width="2"/><text x="${W-180}" y="58" fill="#d8efe9" font-size="11">${lineLabel}</text>
-    </svg>`;
-    $('#chart-wrap').innerHTML = svg;
   }
 
-  function uniqueSorted(values){
-    return Array.from(new Set(values.filter(Boolean))).sort((a,b)=>a.localeCompare(b));
+  function fillSelect(el, entries, placeholder){
+    var html = '<option value="">' + esc(placeholder) + '</option>';
+    entries.forEach(function(entry){
+      html += '<option value="' + esc(entry.value) + '">' + esc(entry.label) + '</option>';
+    });
+    el.innerHTML = html;
   }
 
-  function initFilters(){
-    const chains = uniqueSorted(R.rows.flatMap(r=>r.chains||[]));
-    const cats = uniqueSorted(R.rows.map(r=>r.category||'Unknown'));
-    $('#chain').innerHTML = '<option value="">All chains</option>'+chains.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
-    $('#category').innerHTML = '<option value="">All categories</option>'+cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+  function initControls(){
+    var catValues = new Map();
+    var chainValues = new Set();
+    rows.forEach(function(r){
+      catValues.set(catKey(r), catLabel(r));
+      (Array.isArray(r.chains) ? r.chains : []).forEach(function(c){ if(c) chainValues.add(c); });
+    });
+    var cats = Array.from(catValues, function(pair){ return { value:pair[0], label:pair[1] }; })
+      .sort(function(a, b){ return a.label.localeCompare(b.label); });
+    fillSelect(byId('category'), cats, 'All categories');
+    fillSelect(byId('chain'), Array.from(chainValues).sort().map(function(c){ return { value:c, label:c }; }), 'All chains');
+    byId('asof').textContent = P.as_of || 'unknown';
+    byId('sourcename').textContent = P.source || '';
+    if(P.model){
+      byId('model-formula').textContent = P.model.formula || '';
+      byId('model-rule').textContent = P.model.verdict_rule || '';
+      byId('model-test').textContent = P.model.loo_sentence || '';
+    }
   }
 
-  let state = { q:'', chain:'', category:'', verdict:'all', sort:'implied', detail:null };
-
-  function readHash(){
-    const h = location.hash.replace(/^#/,'');
-    const p = new URLSearchParams(h);
-    if(p.get('filter')) state.verdict = p.get('filter');
-    if(p.get('chain')) state.chain = p.get('chain');
-    if(p.get('category')) state.category = p.get('category');
-    if(p.get('q')) state.q = p.get('q');
-    if(p.get('sort')) state.sort = p.get('sort');
-    if(p.get('detail')) state.detail = p.get('detail');
-  }
-  function writeHash(){
-    const p = new URLSearchParams();
-    if(state.verdict && state.verdict!=='all') p.set('filter', state.verdict);
-    if(state.chain) p.set('chain', state.chain);
-    if(state.category) p.set('category', state.category);
-    if(state.q) p.set('q', state.q);
-    if(state.sort && state.sort!=='implied') p.set('sort', state.sort);
-    if(state.detail) p.set('detail', state.detail);
-    const s = p.toString();
-    const nh = s ? '#'+s : '';
-    if(location.hash !== nh) history.replaceState(null,'', nh || location.pathname+location.search);
+  function matches(entry){
+    var q = state.q.trim().toLowerCase();
+    if(q && entry.hay.indexOf(q) < 0) return false;
+    if(state.category && entry.cat !== state.category) return false;
+    if(state.chain && entry.chains.indexOf(state.chain) < 0) return false;
+    if(state.verdict !== 'all' && entry.row.verdict !== state.verdict) return false;
+    if(state.effort !== 'all' && entry.tier !== state.effort) return false;
+    if(entry.tvl !== null && entry.tvl < threshold()) return false;
+    return true;
   }
 
-  function applyControlsFromState(){
-    $('#search').value = state.q;
-    $('#chain').value = state.chain;
-    $('#category').value = state.category;
-    $('#sort').value = state.sort;
-    document.querySelectorAll('#verdict-chips .chip').forEach(b=>b.classList.toggle('active', b.dataset.v===state.verdict));
+  function sortValue(entry){
+    switch(state.sort){
+      case 'rank': return entry.rank;
+      case 'tvl': return entry.tvl;
+      case 'change': return entry.chg;
+      case 'ev': return entry.ev;
+      case 'implied': return entry.implied;
+      case 'effort': return entry.tier === null ? null : effortOrder[entry.tier];
+      default: return entry.rank;
+    }
   }
 
-  function filteredRows(){
-    let rows = R.rows.slice();
-    const q = state.q.trim().toLowerCase();
-    if(q) rows = rows.filter(r=>r.name.toLowerCase().includes(q) || r.slug.toLowerCase().includes(q));
-    if(state.chain) rows = rows.filter(r=>r.chains && r.chains.includes(state.chain));
-    if(state.category) rows = rows.filter(r=>(r.category||'Unknown')===state.category);
-    if(state.verdict!=='all') rows = rows.filter(r=>r.verdict===state.verdict);
-    const cmp = {
-      implied:(a,b)=>b.implied_value_usd-a.implied_value_usd || a.rank-b.rank,
-      tvl:(a,b)=>b.tvl_usd-a.tvl_usd,
-      growth:(a,b)=>((b.change_7d??-1e9)-(a.change_7d??-1e9)),
-      age:(a,b)=>((b.age_days??-1)-(a.age_days??-1)),
-      name:(a,b)=>a.name.localeCompare(b.name)
-    }[state.sort] || ((a,b)=>a.rank-b.rank);
-    rows.sort(cmp);
-    return rows;
+  function compareRows(a, b){
+    var av = sortValue(a);
+    var bv = sortValue(b);
+    if(av === null && bv === null) return a.rank - b.rank;
+    if(av === null) return 1;
+    if(bv === null) return -1;
+    if(av !== bv) return (av - bv) * state.dir;
+    return a.rank - b.rank;
+  }
+
+  function pipelineKey(){
+    return [state.q.trim().toLowerCase(), state.category, state.chain, state.verdict,
+      state.effort, state.slider, state.sort, state.dir].join('|');
+  }
+
+  function computeRows(){
+    var key = pipelineKey();
+    if(pipelineCache.key === key) return pipelineCache.list;
+    var kept = prepared.filter(matches);
+    kept.sort(compareRows);
+    pipelineCache = { key:key, list:kept.map(function(entry){ return entry.row; }) };
+    return pipelineCache.list;
+  }
+
+  function sparkline(row){
+    var value = row.change_7d;
+    var slug = String(row.slug || '');
+    var seed = 0;
+    for(var k = 0; k < slug.length; k++) seed = (seed * 31 + slug.charCodeAt(k)) % 997;
+    var spread = finite(value) ? Math.max(3, Math.abs(value) * 1.25) : 4;
+    var path = [];
+    for(var i = 0; i <= 7; i++){
+      var t = i / 7;
+      var wander = Math.sin(seed * 0.07 + i * 1.6) * spread * 0.17 * (1 - t * 0.55);
+      var level = finite(value) ? value * t + wander : 0;
+      var y = 10 - Math.max(-1, Math.min(1, level / spread)) * 8;
+      path.push((i ? 'L' : 'M') + (i * 10).toFixed(1) + ' ' + y.toFixed(1));
+    }
+    var tone = !finite(value) ? 'var(--dim)' : value > 0.05 ? 'var(--lime)' : value < -0.05 ? 'var(--rose)' : 'var(--cyan)';
+    var label = finite(value)
+      ? String(row.name || 'Protocol') + ': seven day change ' + changeText(value)
+      : String(row.name || 'Protocol') + ': seven day change not reported';
+    return '<svg class="spark" viewBox="0 0 70 20" role="img" aria-label="' + esc(label) + '">' +
+      '<path class="spark-base" d="M0 10 L70 10"/>' +
+      '<path class="spark-line" style="stroke:' + tone + '" d="' + path.join(' ') + '"/></svg>';
+  }
+
+  function stepColumn(row){
+    var plan = row.farm || {};
+    var actions = Array.isArray(plan.actions) ? plan.actions : [];
+    var legacy = Array.isArray(row.farm_steps) ? row.farm_steps : [];
+    var count = actions.length || legacy.length;
+    var lead = actions.length ? actions[0].target : (legacy.length ? legacy[0] : 'plan unavailable');
+    return '<span class="steps-cell"><b>' + count + ' steps</b> ' + esc(lead) + '</span>';
   }
 
   function renderTable(){
-    const rows = filteredRows();
-    const tbody = $('#board-body');
-    tbody.innerHTML = rows.map(r=>{
-      const chg = r.change_7d==null ? 'n/a' : `<span class="${r.change_7d>=0?'pos':'neg'}">${fmtNum(r.change_7d,2)}%</span>`;
-      const age = r.age_days==null ? 'n/a' : r.age_days+'d';
-      const chains = (r.chains||[]).slice(0,3).map(esc).join(', ')+(r.chains&&r.chains.length>3?'…':'');
-      return `<tr data-slug="${esc(r.slug)}">
-        <td class="num">${r.rank}</td>
-        <td><div>${esc(r.name)}</div><div class="small">${esc(r.category||'Unknown')}</div></td>
-        <td>${chains||'-'}</td>
-        <td class="num">${fmtCompact(r.tvl_usd)}</td>
-        <td class="num">${chg}</td>
-        <td class="num">${age}</td>
-        <td class="num">${fmtCompact(r.implied_value_usd)}</td>
-        <td class="num">${fmtNum(r.ev_per_hour,2)}</td>
-        <td class="v-${r.verdict}">${r.verdict}</td>
-      </tr>`;
-    }).join('');
-    tbody.querySelectorAll('tr').forEach(tr=>tr.addEventListener('click',()=>openDetail(tr.dataset.slug)));
+    shownRows = computeRows();
+    if(cursor >= shownRows.length) cursor = shownRows.length - 1;
+    bodyEl.innerHTML = shownRows.length ? shownRows.map(function(r, index){
+      var chg = finite(r.change_7d) ? '<span class="' + (r.change_7d > 0 ? 'up' : r.change_7d < 0 ? 'down' : 'flat') + '">' + changeText(r.change_7d) + '</span>' : '<span class="flat">n/a</span>';
+      var chains = Array.isArray(r.chains) ? r.chains : [];
+      var chainHtml = chains.slice(0, 2).map(function(c){ return '<span class="badge chain">' + esc(c) + '</span>'; }).join('') +
+        (chains.length > 2 ? '<span class="more">+' + (chains.length - 2) + '</span>' : '');
+      var tier = effortOf(r);
+      var rowLabel = 'Rank ' + r.rank + ', ' + r.name + ', ' + r.verdict +
+        (tier ? ', ' + tier + ' effort' : '') + ', ' + compact(r.implied_value_usd) + ' implied';
+      return '<tr data-slug="' + esc(r.slug) + '" data-index="' + index + '" aria-label="' + esc(rowLabel) + '"' + (index === cursor ? ' class="is-selected"' : '') + '>' +
+        '<td class="rank-cell' + (r.rank === 1 ? ' rank-top' : '') + '">' + r.rank + '</td>' +
+        '<td><div class="proto">' + esc(r.name) + '</div><div class="slugline">' + esc(r.slug) + '</div></td>' +
+        '<td><span class="badge cat">' + esc(catLabel(r)) + '</span></td>' +
+        '<td>' + (chainHtml || '<span class="more">-</span>') + '</td>' +
+        '<td class="num">' + compact(r.tvl_usd) + '</td>' +
+        '<td class="num">' + chg + '</td>' +
+        '<td>' + sparkline(r) + '</td>' +
+        '<td class="num">' + (finite(r.ev_per_hour) ? '$' + decimal(r.ev_per_hour, 2) : 'n/a') + '</td>' +
+        '<td class="num">' + compact(r.implied_value_usd) + '</td>' +
+        '<td>' + (tier ? '<span class="chip ' + esc(tier) + '">' + esc(tier) + '</span>' : '<span class="more">-</span>') + '</td>' +
+        '<td><span class="chip ' + esc(r.verdict) + '">' + esc(r.verdict) + '</span></td>' +
+        '<td>' + stepColumn(r) + '</td></tr>';
+    }).join('') : '<tr><td class="empty" colspan="12">No protocols match these controls.</td></tr>';
+    byId('resultcount').innerHTML = 'Showing <b>' + shownRows.length + '</b> of ' + totalRows + ' rows';
+    renderKpis(shownRows.length);
+    document.querySelectorAll('thead th[data-col]').forEach(function(th){
+      th.setAttribute('aria-sort', th.dataset.col === state.sort ? (state.dir === 1 ? 'ascending' : 'descending') : 'none');
+    });
   }
 
-  function openDetail(slug){
-    const r = R.rows.find(x=>x.slug===slug);
-    if(!r) return;
-    state.detail = slug; writeHash();
-    const chains = (r.chains||[]).map(c=>`<span class="pill">${esc(c)}</span>`).join('') || '-';
-    const steps = r.farm_steps.map(s=>`<li>${esc(s)}</li>`).join('');
-    $('#drawer-content').innerHTML = `
-      <h2>${esc(r.name)}</h2>
-      <p class="small">${esc(r.slug)} · ${esc(r.category||'Unknown')}</p>
-      <div style="margin:8px 0">${chains}</div>
-      <div class="kv">
-        <div>Rank</div><div class="num">${r.rank}</div>
-        <div>TVL</div><div class="num">${fmtUsd(r.tvl_usd)}</div>
-        <div>7d change</div><div class="num">${r.change_7d==null?'n/a':fmtNum(r.change_7d,2)+'%'}</div>
-        <div>Age (days)</div><div class="num">${r.age_days==null?'n/a':r.age_days}</div>
-        <div>Base implied</div><div class="num">${fmtUsd(r.base_implied_usd)}</div>
-        <div>Growth mult</div><div class="num">${fmtNum(r.growth_mult,4)}</div>
-        <div>Age mult</div><div class="num">${fmtNum(r.age_mult,4)}</div>
-        <div>Implied value</div><div class="num">${fmtUsd(r.implied_value_usd)}</div>
-        <div>Expected airdrop (0.50%)</div><div class="num">${fmtUsd(r.expected_airdrop_usd)}</div>
-        <div>Gas estimate</div><div class="num">${fmtUsd(r.gas_usd)}</div>
-        <div>Capital drag</div><div class="num">${fmtUsd(r.capital_drag_usd)}</div>
-        <div>Farm hours</div><div class="num">${fmtNum(r.farm_hours,2)}</div>
-        <div>EV per active hour</div><div class="num">${fmtNum(r.ev_per_hour,2)}</div>
-        <div>Verdict</div><div class="v-${r.verdict}">${r.verdict}</div>
-      </div>
-      <h3 style="margin-top:14px">Farm plan</h3>
-      <ol class="steps">${steps}</ol>`;
-    $('#drawer').classList.remove('hidden');
-    $('#drawer').setAttribute('aria-hidden','false');
-  }
-  function closeDetail(){
-    state.detail = null; writeHash();
-    $('#drawer').classList.add('hidden');
-    $('#drawer').setAttribute('aria-hidden','true');
+  function markCursor(){
+    bodyEl.querySelectorAll('tr[data-index]').forEach(function(tr){
+      tr.classList.toggle('is-selected', Number(tr.dataset.index) === cursor);
+    });
   }
 
-  function update(){ writeHash(); renderTable(); }
+  function moveCursor(step){
+    if(!shownRows.length) return;
+    cursor = Math.max(0, Math.min(shownRows.length - 1, cursor + step));
+    markCursor();
+    var active = bodyEl.querySelector('tr[data-index="' + cursor + '"]');
+    if(active && active.scrollIntoView) active.scrollIntoView({ block:'nearest' });
+  }
 
-  $('#search').addEventListener('input', e=>{ state.q=e.target.value; update(); });
-  $('#chain').addEventListener('change', e=>{ state.chain=e.target.value; update(); });
-  $('#category').addEventListener('change', e=>{ state.category=e.target.value; update(); });
-  $('#sort').addEventListener('change', e=>{ state.sort=e.target.value; update(); });
-  document.querySelectorAll('#verdict-chips .chip').forEach(b=>b.addEventListener('click',()=>{
-    state.verdict=b.dataset.v; applyControlsFromState(); update();
-  }));
-  $('#drawer-close').addEventListener('click', closeDetail);
-  $('#drawer').addEventListener('click', e=>{ if(e.target.id==='drawer') closeDetail(); });
-  window.addEventListener('hashchange', ()=>{ readHash(); applyControlsFromState(); renderTable(); if(state.detail) openDetail(state.detail); else closeDetail(); });
+  function metric(label, value){
+    return '<div class="metric"><span>' + esc(label) + '</span><strong>' + value + '</strong></div>';
+  }
+  function actionCard(action, index){
+    return '<div class="action"><div class="action-rank">' + (index + 1) + '</div><div>' +
+      '<div class="action-top"><span class="action-target">' + esc(action.target || 'unspecified target') + '</span>' +
+      '<span class="chip ' + esc(action.kind || 'interact') + '">' + esc(action.kind || 'task') + '</span></div>' +
+      '<p class="action-detail">' + esc(action.detail || '') + '</p>' +
+      '<span class="action-watch">size ' + money(action.size_usd) + ' / watch: ' + esc(action.watch_for || 'not stated') + '</span>' +
+      '</div></div>';
+  }
 
-  renderStats(); renderModel(); renderChart(); initFilters(); readHash(); applyControlsFromState(); renderTable();
-  if(state.detail) openDetail(state.detail);
+  function openDrawer(slug){
+    var row = bySlug.get(slug);
+    if(!row) return;
+    focusBeforeDrawer = document.activeElement;
+    var plan = row.farm || {};
+    var actions = Array.isArray(plan.actions) ? plan.actions : [];
+    var steps = Array.isArray(row.farm_steps) ? row.farm_steps : [];
+    var flags = Array.isArray(plan.data_flags) && plan.data_flags.length ? plan.data_flags.join(', ') : 'none';
+    var reasons = Array.isArray(plan.effort_reasons) ? plan.effort_reasons : [];
+    var tier = effortOf(row);
+    var chains = Array.isArray(row.chains) ? row.chains : [];
+    byId('drawer-body').innerHTML =
+      '<h2 class="drawer-title" id="drawer-title">' + esc(row.name) + '</h2>' +
+      '<div class="drawer-sub">rank ' + row.rank + ' / ' + esc(row.slug) + '</div>' +
+      '<div class="tagrow">' +
+        '<span class="chip ' + esc(row.verdict) + '">' + esc(row.verdict) + '</span> ' +
+        (tier ? '<span class="chip ' + esc(tier) + '">' + esc(tier) + ' effort</span> ' : '') +
+        '<span class="badge cat">' + esc(catLabel(row)) + '</span> ' +
+        chains.map(function(c){ return '<span class="badge chain">' + esc(c) + '</span>'; }).join('') +
+      '</div>' +
+      '<div class="metric-grid">' +
+        metric('Implied value', money(row.implied_value_usd)) +
+        metric('EV per hour', finite(row.ev_per_hour) ? '$' + decimal(row.ev_per_hour, 2) : 'n/a') +
+        metric('TVL', money(row.tvl_usd)) +
+        metric('7d change', changeText(row.change_7d)) +
+        metric('Base estimate', money(row.base_implied_usd)) +
+        metric('Growth / age mult', decimal(row.growth_mult, 3) + ' / ' + decimal(row.age_mult, 3)) +
+        metric('Expected airdrop', money(row.expected_airdrop_usd)) +
+        metric('Gas + capital drag', money(row.gas_usd) + ' + ' + money(row.capital_drag_usd)) +
+        metric('Active hours', finite(row.farm_hours) ? decimal(row.farm_hours, 2) + 'h' : 'n/a') +
+        metric('Adjusted score', decimal(plan.effort_adjusted_score, 2)) +
+      '</div>' +
+      '<h3>Launch window and confidence</h3>' +
+      '<div class="metric-grid">' +
+        metric('Window band', esc(plan.window_band || 'n/a')) +
+        metric('Days to window', finite(plan.days_to_window) ? plan.days_to_window + 'd' : 'n/a') +
+        metric('Confidence', esc(plan.confidence || 'n/a')) +
+        metric('Effort score', decimal(plan.effort_score, 2)) +
+        metric('Suggested capital', money(plan.suggested_capital_usd)) +
+        metric('Data flags', '<span class="flags">' + esc(flags) + '</span>') +
+      '</div>' +
+      '<p class="note">' + esc(plan.rationale || 'No rationale supplied for this row.') + '</p>' +
+      (reasons.length ? '<h3>Why this effort tier</h3><ul class="step-list">' + reasons.map(function(text){ return '<li>' + esc(text) + '</li>'; }).join('') + '</ul>' : '') +
+      '<h3>Action queue</h3>' +
+      (actions.length ? actions.map(actionCard).join('') : '<p class="muted">No structured actions on this row.</p>') +
+      '<h3>Step sequence</h3>' +
+      (steps.length ? '<ol class="step-list">' + steps.map(function(text){ return '<li>' + esc(text) + '</li>'; }).join('') + '</ol>' : '<p class="muted">No legacy steps on this row.</p>');
+    drawer.classList.remove('is-hidden');
+    drawer.setAttribute('aria-hidden', 'false');
+    byId('drawer-close').focus();
+  }
+
+  function closeDrawer(){
+    if(drawer.classList.contains('is-hidden')) return;
+    drawer.classList.add('is-hidden');
+    drawer.setAttribute('aria-hidden', 'true');
+    if(focusBeforeDrawer && focusBeforeDrawer.focus) focusBeforeDrawer.focus();
+  }
+
+  function refresh(){
+    bodyEl.parentElement.scrollTop = 0;
+    renderTable();
+  }
+
+  document.querySelectorAll('thead button[data-key]').forEach(function(button){
+    button.addEventListener('click', function(){
+      var key = button.dataset.key;
+      if(state.sort === key) state.dir = -state.dir;
+      else { state.sort = key; state.dir = sortDefault[key] || 1; }
+      refresh();
+    });
+  });
+  bodyEl.addEventListener('click', function(e){
+    var tr = e.target && e.target.closest ? e.target.closest('tr[data-slug]') : null;
+    if(!tr) return;
+    cursor = Number(tr.dataset.index);
+    markCursor();
+    openDrawer(tr.dataset.slug);
+  });
+  searchEl.addEventListener('input', function(e){ state.q = e.target.value; refresh(); });
+  byId('category').addEventListener('change', function(e){ state.category = e.target.value; refresh(); });
+  byId('chain').addEventListener('change', function(e){ state.chain = e.target.value; refresh(); });
+  byId('verdict').addEventListener('change', function(e){ state.verdict = e.target.value; refresh(); });
+  byId('effort').addEventListener('change', function(e){ state.effort = e.target.value; refresh(); });
+  byId('mintvl').addEventListener('input', function(e){
+    state.slider = Number(e.target.value);
+    byId('tvlvalue').textContent = state.slider === 0 ? 'none' : compact(threshold());
+    refresh();
+  });
+  byId('reset').addEventListener('click', function(){
+    state.q = ''; state.category = ''; state.chain = ''; state.verdict = 'all';
+    state.effort = 'all'; state.slider = 0; state.sort = 'rank'; state.dir = 1;
+    searchEl.value = ''; byId('category').value = ''; byId('chain').value = '';
+    byId('verdict').value = 'all'; byId('effort').value = 'all';
+    byId('mintvl').value = '0'; byId('tvlvalue').textContent = 'none';
+    cursor = -1; refresh();
+  });
+  byId('drawer-close').addEventListener('click', closeDrawer);
+  drawer.addEventListener('click', function(e){
+    if(e.target && e.target.getAttribute('data-dismiss')) closeDrawer();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeDrawer(); return; }
+    var tag = e.target && e.target.tagName;
+    if(e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA'){
+      e.preventDefault(); searchEl.focus(); searchEl.select(); return;
+    }
+    if(e.key === 'ArrowDown' || e.key === 'ArrowUp'){
+      if(tag === 'SELECT' || tag === 'BUTTON') return;
+      e.preventDefault(); moveCursor(e.key === 'ArrowDown' ? 1 : -1); return;
+    }
+    if(e.key === 'Enter' && tag !== 'BUTTON' && shownRows.length){
+      e.preventDefault();
+      if(cursor < 0) cursor = 0;
+      openDrawer(shownRows[cursor].slug);
+    }
+  });
+
+  initControls();
+  renderTable();
 })();

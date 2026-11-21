@@ -3,69 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Token Launch Radar</title>
+  <meta name="color-scheme" content="dark">
+  <title>Sweepline - Token Radar Terminal</title>
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
-  <header class="top">
-    <div>
-      <h1>Token Launch Radar</h1>
-      <p class="tagline">Ranks pre-token protocols by model-implied value from live TVL-to-market comparables.</p>
+  <header class="masthead">
+    <div class="brand">
+      <div class="brand-mark">SW<span>/</span>LINE</div>
+      <div>
+        <h1>Token Radar Terminal</h1>
+        <p class="brand-note">Model-priced pre-token protocols, ranked by net expected value per active hour. Research display only, not advice.</p>
+      </div>
     </div>
-    <div class="stats" id="stats"></div>
+    <div class="stamp">
+      <span class="stamp-label">SNAPSHOT</span>
+      <strong id="asof">-</strong>
+      <span class="stamp-label" id="sourcename"></span>
+    </div>
   </header>
 
-  <section class="panel" id="model-card">
-    <h2>Model card</h2>
-    <div class="model-grid">
-      <div>
-        <h3>Formula and fit</h3>
-        <p id="formula"></p>
-        <p id="constants" class="muted"></p>
-        <p id="loo"></p>
-      </div>
-      <div>
-        <h3>Assumptions and verdicts</h3>
-        <p id="assumption"></p>
-        <p id="verdict-rule"></p>
-      </div>
+  <section class="kpi-strip" id="kpis" aria-label="Board key metrics"></section>
+
+  <section class="panel filter-panel" aria-labelledby="filter-title">
+    <div class="panel-head">
+      <h2 id="filter-title">Screener</h2>
+      <div class="result-line" id="resultcount" role="status" aria-live="polite">Loading board...</div>
+    </div>
+    <div class="filter-grid">
+      <label class="field field-search">
+        <span>Search name / slug <kbd>/</kbd></span>
+        <input id="search" type="search" placeholder="type a protocol or slug" autocomplete="off" aria-label="Search protocols by name or slug" aria-keyshortcuts="/">
+      </label>
+      <label class="field">
+        <span>Category</span>
+        <select id="category" aria-label="Filter by category"></select>
+      </label>
+      <label class="field">
+        <span>Chain</span>
+        <select id="chain" aria-label="Filter by chain"></select>
+      </label>
+      <label class="field">
+        <span>Verdict</span>
+        <select id="verdict" aria-label="Filter by verdict">
+          <option value="all">All verdicts</option>
+          <option value="farm">Farm</option>
+          <option value="thin">Thin</option>
+          <option value="skip">Skip</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Effort tier</span>
+        <select id="effort" aria-label="Filter by farm effort tier">
+          <option value="all">All tiers</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </label>
+      <label class="field field-tvl">
+        <span>Min TVL <output id="tvlvalue" for="mintvl">none</output></span>
+        <input id="mintvl" type="range" min="0" max="100" step="1" value="0" aria-label="Minimum TVL, logarithmic scale">
+      </label>
+      <button class="reset-btn" id="reset" type="button" aria-label="Reset all screen controls">Reset</button>
     </div>
   </section>
 
-  <section class="panel">
-    <h2>Comparables scatter</h2>
-    <div id="chart-wrap"></div>
-  </section>
-
-  <section class="panel controls-panel">
-    <h2>Board controls</h2>
-    <div class="controls">
-      <label>Search <input id="search" type="search" placeholder="protocol or slug"></label>
-      <label>Chain <select id="chain"></select></label>
-      <label>Category <select id="category"></select></label>
-      <label>Sort <select id="sort">
-        <option value="implied">Implied value</option>
-        <option value="tvl">TVL</option>
-        <option value="growth">7d growth</option>
-        <option value="age">Age</option>
-        <option value="name">Name</option>
-      </select></label>
+  <section class="panel board-panel" aria-labelledby="board-title">
+    <div class="panel-head">
+      <h2 id="board-title">Ranked board</h2>
+      <p class="hint">Click a column to sort. Click a row for the full farm plan. Up / Down moves the cursor, Enter opens.</p>
     </div>
-    <div class="chips" id="verdict-chips">
-      <button data-v="all" class="chip active">All</button>
-      <button data-v="farm" class="chip">Farm</button>
-      <button data-v="thin" class="chip">Thin</button>
-      <button data-v="skip" class="chip">Skip</button>
-    </div>
-  </section>
-
-  <section class="panel table-panel">
-    <h2>Board</h2>
     <div class="table-wrap">
       <table id="board">
         <thead>
           <tr>
-            <th>Rank</th><th>Protocol</th><th>Chains</th><th>TVL</th><th>7d</th><th>Age</th><th>Implied</th><th>EV per active hour</th><th>Verdict</th>
+            <th class="col-rank" scope="col" data-col="rank" aria-sort="ascending"><button type="button" data-key="rank" aria-label="Sort by rank"># <span class="caret"></span></button></th>
+            <th class="col-name" scope="col">Protocol</th>
+            <th class="col-cat" scope="col">Category</th>
+            <th class="col-chain" scope="col">Chains</th>
+            <th class="col-num" scope="col" data-col="tvl" aria-sort="none"><button type="button" data-key="tvl" aria-label="Sort by TVL">TVL <span class="caret"></span></button></th>
+            <th class="col-num" scope="col" data-col="change" aria-sort="none"><button type="button" data-key="change" aria-label="Sort by seven day change">7d <span class="caret"></span></button></th>
+            <th class="col-spark" scope="col">Trend</th>
+            <th class="col-num" scope="col" data-col="ev" aria-sort="none"><button type="button" data-key="ev" aria-label="Sort by expected value per hour">EV/hr <span class="caret"></span></button></th>
+            <th class="col-num" scope="col" data-col="implied" aria-sort="none"><button type="button" data-key="implied" aria-label="Sort by implied value">Implied <span class="caret"></span></button></th>
+            <th class="col-effort" scope="col" data-col="effort" aria-sort="none"><button type="button" data-key="effort" aria-label="Sort by farm effort tier">Effort <span class="caret"></span></button></th>
+            <th class="col-verdict" scope="col">Verdict</th>
+            <th class="col-steps" scope="col">Farm steps</th>
           </tr>
         </thead>
         <tbody id="board-body"></tbody>
@@ -73,11 +97,22 @@
     </div>
   </section>
 
-  <div id="drawer" class="drawer hidden" aria-hidden="true">
-    <div class="drawer-inner">
-      <button id="drawer-close" class="close-btn" aria-label="Close">Close</button>
-      <div id="drawer-content"></div>
-    </div>
+  <section class="panel model-panel" id="modelpanel" aria-labelledby="model-title">
+    <h2 id="model-title">Model notes</h2>
+    <p id="model-formula"></p>
+    <p id="model-rule" class="muted"></p>
+    <p id="model-test" class="muted"></p>
+  </section>
+
+  <div id="drawer" class="drawer is-hidden" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+    <div class="backdrop" data-dismiss="1"></div>
+    <aside class="sheet">
+      <div class="sheet-bar">
+        <span>FARM DOSSIER <span class="bar-dim">/</span> ROW DETAIL</span>
+        <button id="drawer-close" type="button" aria-label="Close detail panel">Close <span aria-hidden="true">x</span></button>
+      </div>
+      <div id="drawer-body" class="sheet-body"></div>
+    </aside>
   </div>
 
   <script src="../data.js"></script>
